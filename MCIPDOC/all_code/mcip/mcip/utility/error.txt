@@ -1,0 +1,213 @@
+800000000;WEB SERVER系统初始化错误
+800000001;WEB SERVER系统没有初始化
+800000002;WEB SERVER系统Session初始化错误
+800000003;系统内部参数错误
+800000004;没有取得客户信息
+800000005;您还没有合法登录
+
+100000000;数据库操作失败(DB Operation Fail)!
+100000001;数据库连接失败，联系系统管理人员(Connect DB Fail)!
+100000002;找不到符合查询条件的记录(Can not find required record)!
+100000003;找到多条符合查询条件的记录(Return record are not unique)!
+100000004;返回的信息没有数据(Return ResultSet have no record)!
+100000005;查询数据的SQL语句错误(Query SQL error)!
+100000006;数据库连接故障，联系系统管理人员（增加、修改、删除数据的SQL语句错误(Update SQL error)）!
+100000007;数据库连接故障，联系系统管理人员（查询数据的SQL语句预处理错误(Prepared Query SQL error)）!
+100000008;数据库连接故障，联系系统管理人员（增加、修改、删除数据的SQL语句预处理错误(Prepared Update SQL error)）!
+100000009;数据库连接故障，联系系统管理人员（增加、修改、删除、查询数据的SQL语句参数错误(Prepared SQL parameters error)）!
+100000010;数组初始化错误(Set Return Array error)!
+100000011;数据库连接故障，联系系统管理人员（批量处理增加、修改、删除数据的SQL语句预处理错误(Batch Prepared Update SQL error)）!
+
+100010001;日志数据库读写错误！
+
+100030001;Can't read from mail.properties file
+100030002;Can't get smtpserver parm from mail.properties file
+100030003;Invalid adminemail parm in mail.properties file
+100030004;Invalid data cause mail could not send out
+100030005;Invalid email address for sender in db or mail.properties file
+100030006;Invalid email address for receiver in db
+100030007;Error during retrieve mail list from db
+100030008;Error during the loop of checking and sending out the mail
+100030009;Error during the loop of update email flag
+
+
+100100000;Please input a valid case number
+100100001;Return error when Java calling C
+100100002;Error return body length
+100100003;Error during getheader method
+100100004;Error during findfield method
+100100005;Error during buildcstyle method
+100100006;Error during getbytearray method
+100100007;Error during getstrarray method
+100100008;Input Header or object error
+100100009;Java call c error internal error
+100100010;Java input object and reference object mapping error
+100100011;系统调用错误(Java call c error)!
+100100012;Error during javacallc method
+100100013;Error during get PkHead object method
+100100014;Error during bytestostr method
+100100015;系统调用返回空值(Java call C return Null value)!
+100100016;Set Object to C String fail 
+
+
+100500001;Error Date Format
+100500002;Convert Object to Array Error
+
+
+100600001;Input Flag Error when get current timestamp
+100600002;Can not Connect DB when get current timestamp
+
+
+200000001;该会员帐号已被使用，请重新输入！
+200000002;用户帐号不存在或用户帐号与密码不匹配，请重新输入！
+200000003;找不到该会员的注册信息。
+200000004;没有该会员的客户编码或代理人编码，请重新注册！
+200000005;没有该会员的客户编码，请重新登录！
+200000006;没有该会员的代理人编码，请重新登录！
+200000007;该会员的客户编码和代理人编码同时存在，系统运行有误！
+200000008;使用非法的会员名称、非法的身份证号码/工商登记号或非法的代理人编码。
+200000009;会员名称、身份证号码/工商登记号或代理人编码重复被使用
+200000010;会员信息查询条件为空，请重新输入！
+200000011;会员信息查询条件不正确，请重新输入！
+200000012;找不到符合查询条件的会员信息记录。请重新进行！
+200000013;找不到会员的主帐号信息记录。请重新登录或注册！
+200000014;本会员存在多个主帐号信息记录。请重新进行会员审核！
+200000015;会员资格的注册信息记录审核未通过或已经失效。请重新进行注册登记！
+200000016;会员资格的注册信息记录尚在审核中或已经失效。
+200000017;会员的密码更新失败，请重新进行！
+200000018;会员的登录失败，请重新进行。
+
+200100001;查询条件为空，请重新输入！
+200100002;查询条件不正确，请重新输入！
+200100003;找不到符合查询条件的记录。请重新进行！
+
+200100004;该提单或发票的投保单记录已经存在
+200100005;投保单申请发送超时
+200100006;投保单修改申请发送超时
+200100007;投保单撤回申请发送超时
+200100008;投保建议书确认申请发送超时
+
+200100009;费率表中找不到符合查询条件的记录。请重新进行！
+200100010;货物加费表中找不到符合查询条件的记录。请重新进行！
+200100011;险种查询条件不正确，请重新选择！
+200100012;附加险查询条件不正确，请重新选择！
+200100013;单据号（投保单号、建议书号、保单号）不正确，请重新操作！
+200100014;意见内容为空值或非法，请重新输入！
+
+300000001;操作员帐号已被使用，请重新输入！
+300000002;操作员帐号或密码不对，请重新输入！
+300000003;员工编号不存在或该员工不在本管辖机构内
+300000004;非法的操作员帐号或员工编号，无权操作！
+300000005;非法的授权帐号，无权操作！
+300000006;产生系统功能编号时，数据库发生错误，序号重复！
+300000007;产生系统页面编号时，数据库发生错误，序号重复！
+300000008;非法的管辖机构或管辖机构编号为空！
+300000009;非法的操作员帐号或员工编码，请重新输入！
+300000010;非法的操作类型（1 -- 接受授权；2 -- 修改授权，3 -- 删除授权）！
+300000011;未选择被授权的功能或管辖机构，被授权的功能或管辖机构不合法，请在列表中重新选择！
+300000012;会员中文名称为空！
+300000013;非法的核准标记，请重新选择！
+300000014;该会员的代理人编码为空，请重新审核确认该会员的类型！
+300000015;没有该会员的代理人编码记录，请重新审核确认该会员！
+300000016;该会员的客户编码为空，请重新审核确认该会员的类型！
+300000017;没有该会员的客户编码记录，请重新审核确认该会员！
+300000018;该会员的开口(Open Cover)协议记录不存在或已经过期失效，请重新审核确认该会员！
+300000019;被替换的授权操作员帐号非法或为空，无权操作！
+300000020;替换后的授权操作员管辖机构范围不足够，请重新授权！
+300000021;替换后的授权操作员授权的功能范围不足够，请重新授权！
+300000022;非法的会员帐号或会员帐号为空，请重新输入！
+300000023;会员的客户编码为空或非法，请重新输入或审核！
+300000024;会员的代理人编码为空或非法，请重新输入或审核！
+300000025;非法的主帐号标志或主帐号标志为空，请重新输入！
+300000026;非法的会员类型标志或会员类型标志为空，系统运行错误，请重新操作！
+300000027;会员帐号与客户编码/代理人编码的连接关系已存在！
+300000028;会员的主帐号已存在！请重新操作！
+300000029;系统功能的相关页面仍然存在！不能删除，请重新操作！
+300000030;员工的电子邮件地址为空或非法，请重新操作！
+300000031;员工的名称、业务类型为空或非法，请重新操作！
+300000032;非法操作，请重新登录！
+
+400000001;非法的操作员帐号,无权操作；请重新登录！
+400000002;非法的打印标记，请重新输入！
+400000003;非法的保单号或保单号为空，请在列表中重新选择！
+400000004;非法的送单员或送单员编号为空，请在列表中重新选择！
+400000005;非法的保单送单时间，请重新输入！
+400000006;非法的保单送到时间，请重新输入！
+400000007;非法的送单员返回时间，请重新输入！
+400000008;非法的管辖机构或管辖机构编号为空，请在列表中重新选择！
+400000009;非法的查询范围，请重新选择！
+400000010;非法的查询选项，请重新选择！
+400000011;非法的报案号或报案号为空，请重新输入！
+400000012;非法的日志事件类型或日志事件编码，请重新选择！
+400000013;非法的日志时间段或日志时间段为空，请重新输入！
+400000014;非法的标题序号或标题序号为空，请重新输入！
+400000015;非法的标题名称或标题名称为空，请重新输入！
+400000016;非法的记录信息序号或记录信息序号为空，非法操作！
+400000017;非法的保险咨询信息录入人或保险咨询信息录入人为空，非法操作！
+400000018;非法的保险咨询标题名称或保险咨询标题名称为空，请重新输入！
+400000019;保险咨询人名称为空，请你重新输入！
+400000020;保险咨询人的电子邮件地址为空，请你重新输入！
+400000021;保险咨询标题名称为空，请你重新输入！
+400000022;本保险咨询标题栏目下含有相关的内容条目，不能删除本保险咨询标题！
+400000023;非法的保单号或保单号为空，请重新输入或重新选择！
+400000024;非法的报案号或报案号为空，请重新输入或重新选择！
+400000025;非法的赔案号或赔案号为空，请重新输入或重新选择！
+400000026;非法的保单号、报案号或赔案号，请重新输入或重新选择！
+
+000000001;General System Error
+000002000;General Database error
+000002001;Database unique key error
+000003000;Database user defined error
+000049999;Database unknown error
+000050000;General system exception
+000050001;INI file read error
+000050002;INI file value error
+000050003;INI file array error
+000050004;Message file reading error
+000100310;Invalid Submission Date From format dd/mm/yyyy
+000100320;Invalid Submission Date To format dd/mm/yyyy
+000100330;Submission Date From should be earlier than Submission Date To
+000100340;Proposal number missing
+000100350;Policy number missing
+000100360;View By missing
+000010001;No record found
+000010002;Agent code not supplied
+000010003;Logon ID not supplied
+000010004;User type not supplied
+000010005;Policy/Proposal no. not supplied
+000010006;No access right
+000100410;Fail to parse results into other formats
+000100420;Invalid Last Update Date
+000100430;
+000100440;Sort By option missiong
+000100450;Movement Number missiong
+000100460;Requirement Code missing
+000100470;Proposal/Policy Number missing
+000100501;Invalid agent code
+000100502;Error in getting subordinates information
+000100601;Agency code and division code for the specific agent cannot be found
+000100602;New password is the same as the old one.  Password is not updated
+000100603;New password is different from confirmed password.  Password is not updated
+000100604;Old password incorrect.  Password is not updated.
+000100605;Error in changing the password.  Password is not updated
+000100701;Client code not supplied
+000100702;Client information and coverage information do not match
+000100703;Client record not found
+000100704;Coverage record not found
+000100801;Invalid surname format
+000100802;Invalid first name format
+000100803;Invalid other name format
+000100804;Invalid ID no. format
+000100805;Invalid sex format
+000100806;Invalid agent code format
+000100807;Invalid client code format
+000100808;Invalid policy/proposal no. format
+000100809;Invalid designation code format
+000100810;Invalid agency code format
+000100811;Invalid division code format
+000100812;Invalid branch code format
+000100813;Invalid unit code format
+000100814;Invalid date of birth (month) format
+000100815;Invalid date of birth (year) format
+000100816;Invalid password format
+

@@ -1,0 +1,12 @@
+module com {
+  module mcip {
+    module orb {
+        exception CoException {
+            string errCode;
+            wstring errDescription;
+            string errFieldName;
+            string severity;
+        };
+    };
+  };
+};

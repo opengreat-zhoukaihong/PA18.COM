@@ -1,0 +1,42 @@
+////////////////////////////////////////////////////////
+// Author: zhanyb
+// Usage:  Mail Method Corba Desc
+// Create: 2000/10/13
+// Update: 2000/10/13
+// update: 20/12/2000 for online mail (real time) by cidy
+////////////////////////////////////////////////////////
+
+#include "exceptions.idl"
+#include "CorbaDataType.idl"
+
+module com{
+  module mcip{
+    module mail{
+      module orb{
+	
+	/*This Structure defined the mail structure that should use in the mail server */
+	struct Mail        //mail structure
+	{
+	  wstring sender;             //Sender
+	  wstring receiver;           //Receiver
+	  wstring subject;            //Subject
+	  wstring content;            //Mail content
+	};
+	
+	interface EmailManager{
+	  //Method 1: Get Mail List according with input type code
+	  com::mcip::orb::Stringss GetMailList(in string mailcde)
+	    raises (com::mcip::orb::CoException);
+	  //Method 2: Set Mail Sended out Flag according with input type code and list
+	  boolean SetMailFlag(in string mailcde,
+			      in com::mcip::orb::Strings key)
+	    raises (com::mcip::orb::CoException);
+	  //Method 3: send mail by corba server that runs online
+	  boolean OnlineMail(in Mail inmail)
+	    raises (com::mcip::orb::CoException);
+	  
+	};
+      };
+    };
+  };
+};

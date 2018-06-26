@@ -1,0 +1,66 @@
+
+#include "CorbaDataType.idl"
+#include "exceptions.idl"
+#include "paymentInfoStruct.idl"
+
+module com
+{
+  module mcip
+  {
+    module pay
+    {
+       module orb
+       {
+        interface PaymentManager
+        {
+
+         com::mcip::orb::Stringss queryLastPayment(in string order_no, in string tran_type, in wstring user_id, in string pay_amt, in string order_tm)
+	        raises (com::mcip::orb::CoException);
+
+         com::mcip::orb::Stringss queryPaymentList(in string order_no, in string tran_type, in wstring user_id, in string pay_amt, in string order_tm)
+	        raises (com::mcip::orb::CoException);
+
+         com::mcip::orb::Stringss queryPaymentLog(in string in_p_id)
+	        raises (com::mcip::orb::CoException);
+
+        // Accept the payment transaction log information of policy apply form
+         boolean acceptPaymentLog(in PaymentLog paymentlogobj)
+         raises (com::mcip::orb::CoException);
+
+        // update policy payment flag set c_pay_flag of t_policy_net = pay_flag
+        boolean updatePayFlag(in string plcy_no, in string pay_flag, in string in_session_id, in wstring bank_cde, in wstring bank_nme, in wstring bank_accnt,
+        in string in_got_prm, in string in_cur_typ, in string pay_tm, in string pay_type, in string pay_cde, in string app_typ)
+         raises (com::mcip::orb::CoException);
+
+         com::mcip::orb::Stringss getPaymentLogList(in string frm_pay_tm, in string to_pay_tm, in com::mcip::orb::Strings owned_dpt,
+         in wstring in_trans_id, in wstring in_order_no, in wstring in_payment_id, in wstring in_cur_typ, in wstring in_user_id)
+	        raises (com::mcip::orb::CoException);
+
+        // Get payment List for Summary statictics by banking          //
+         com::mcip::orb::Stringss getBankPayList(in string frm_pay_tm, in string to_pay_tm, in com::mcip::orb::Strings owned_dpt,
+         in string frm_insrnc_cde, in string to_insrnc_cde, in wstring in_bank_cde)
+	        raises (com::mcip::orb::CoException);
+
+        // Get payment List for Summary statictics by department       //
+         com::mcip::orb::Stringss getDptPayList(in string frm_undr_tm, in string to_undr_tm, in com::mcip::orb::Strings owned_dpt,
+         in string frm_insrnc_cde, in string to_insrnc_cde, in wstring in_bank_cde)
+	        raises (com::mcip::orb::CoException);
+
+        // update the payment transaction log information for payment status
+         boolean updatePaymentLog(in PaymentLog paymentlogobj)
+         raises (com::mcip::orb::CoException);
+
+        // Get payment Status List from t_pa18_paylog for Daemon proccessing         //
+         com::mcip::orb::Stringss getPayStatusList()
+	        raises (com::mcip::orb::CoException);
+
+        // Set payment Status after Daemon proccessing         //
+         boolean setPayFlag(in com::mcip::orb::Stringss payinfo)
+	        raises (com::mcip::orb::CoException);
+
+
+        };
+      };
+    };
+  };
+};

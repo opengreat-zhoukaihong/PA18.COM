@@ -1,0 +1,80 @@
+
+#include "custInfoStruct.idl"
+#include "CorbaDataType.idl"
+#include "exceptions.idl"
+
+module com
+{
+  module mcip
+  {
+    module cus
+    {
+       module orb
+       {
+        interface CustManager
+        {
+
+        	com::mcip::orb::Stringss customerLogin(in wstring usrname,in wstring passwd)
+         raises (com::mcip::orb::CoException);
+
+        	boolean acceptOrgaCust(in string in_register_mrk, in CustOrgn custorgnobj,in CustEntity custentityobj)
+         raises (com::mcip::orb::CoException);
+
+        	boolean acceptPrsnCust(in string in_register_mrk, in CustPrsn custprsnobj,in CustEntity custentityobj)
+         raises (com::mcip::orb::CoException);
+          //Author 康进
+          //Purpose:删除用户功能
+          //Date:2001-09-14
+          //ID:2001091401
+          /*begin of add 2001091401*/
+            boolean deleteIllegalUser (in string user_id)
+          raises (com::mcip::orb::CoException);
+
+          /*end of add 2001091401*/
+        	boolean acceptAgntCust(in CustEntity custentityobj)
+         raises (com::mcip::orb::CoException);
+
+         boolean updateOrgaCust(in CustOrgn custorgnobj,in wstring cust_user_id)
+         raises (com::mcip::orb::CoException);
+
+         boolean updatePrsnCust(in CustPrsn custprsnobj,in wstring cust_user_id)
+         raises (com::mcip::orb::CoException);
+
+         boolean updateEnttCust(in CustEntity custentityobj)
+         raises (com::mcip::orb::CoException);
+
+         com::mcip::orb::Stringss queryCustEntt(in wstring in_account_info)
+	        raises (com::mcip::orb::CoException);
+
+         com::mcip::orb::Stringss queryCustOrgn(in wstring in_account_info)
+	        raises (com::mcip::orb::CoException);
+
+         com::mcip::orb::Stringss queryCustPrsn(in wstring in_account_info)
+	        raises (com::mcip::orb::CoException);
+
+         com::mcip::orb::Stringss queryCustAgnt(in wstring in_account_info)
+	        raises (com::mcip::orb::CoException);
+
+        	com::mcip::orb::Stringss requireCust(in string in_user_mrk,in wstring in_user_id, in wstring in_register_id)
+         raises (com::mcip::orb::CoException);
+
+        	boolean checkProposal(in wstring user_id, in string cust_type)
+         raises (com::mcip::orb::CoException);
+
+         com::mcip::orb::Stringss queryAgencyInfo(in wstring in_agent_cde)
+	        raises (com::mcip::orb::CoException);
+
+         com::mcip::orb::Stringss queryOCcustInfo(in wstring in_clnt_cde)
+	        raises (com::mcip::orb::CoException);
+
+        	boolean acceptOCCust(in string in_register_mrk, in CustOrgn custorgnobj,in CustEntity custentityobj)
+         raises (com::mcip::orb::CoException);
+
+        	boolean acceptAGCust(in string in_register_mrk, in CustOrgn custorgnobj,in CustEntity custentityobj)
+         raises (com::mcip::orb::CoException);
+
+        };
+      };
+    };
+  };
+};

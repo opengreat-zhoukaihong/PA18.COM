@@ -1,0 +1,272 @@
+-- 1 操作员表
+DROP TABLE T_OPERATOR;
+CREATE TABLE T_OPERATOR (
+	C_OPR_CDE	VARCHAR2(10) 	NOT NULL  /* 操作员编号 */,
+	C_OPR_PW	VARCHAR2(6)	NOT NULL  /* 操作密码   */,
+	C_EMP_CDE	VARCHAR2(10)	NOT NULL 
+					CONSTRAINT NN_T_OPERATOR_C_EMP_CDE  
+					CONSTRAINT FK_C_EMP_CDE REFERENCES T_EMP_CDE(C_EMP_CDE) /* 员工编号 */,
+	C_DPT_CDE	VARCHAR2(11)	NOT NULL   /* 操作员所在机构编号 */,
+	C_ACREDT_CDE	VARCHAR2(10)	NOT NULL   /* 该操作员的上级操作员编号 */,
+	C_SYS_ADMIN	VARCHAR2(1)	DEFAULT '0'
+					CONSTRAINT NN_T_OPERATOR_C_SYSADMIN NOT NULL  /* 超级用户标志 */,
+	T_CRT_TM	DATE		NULL  /* 创建时间 */,
+PRIMARY KEY (C_OPR_CDE)) TABLESPACE PASYS_DATA;
+
+-- 2  系统功能表
+DROP TABLE T_SYS_FUNC;
+CREATE TABLE T_SYS_FUNC (
+	C_FUNC_CDE	VARCHAR2(5)	NOT NULL  /* 系统功能编号 */,
+	C_FUNC_CNM	VARCHAR2(50)	NOT NULL  /* 系统功能中文名 */,
+	C_FUNC_ENM	VARCHAR2(50)	NULL      /* 系统功能英文名 */,
+PRIMARY KEY (C_FUNC_CDE))TABLESPACE PASYS_DATA;
+
+-- 3  系统页面管理表
+DROP TABLE T_PAGES_MANAGER;
+CREATE TABLE T_PAGES_MANAGER (
+	C_PAGE_NO	VARCHAR2(10)	NOT NULL   /* 系统页面编号 */,
+	C_PAGE_TITLE	VARCHAR2(100)	NOT NULL   /* 系统页面标题 */,
+	C_FILE_ENM	VARCHAR2(100)	NULL      /* 系统页面文件名 */,
+	C_FUNC_CDE	VARCHAR2(5)	CONSTRAINT NN_T_PAGES_MANAGER_C_FUNC_CDE NOT NULL
+		CONSTRAINT FK_T_PAGES_MANAGER_C_FUNC_CDE REFERENCES T_SYS_FUNC(C_FUNC_CDE)   /* 系统页面所属的功能编号 */,
+	T_EDIT_TM	DATE		NOT NULL DEFAULT SYSDATE     /* 系统页面修改时间 */,
+PRIMARY KEY (C_PAGE_NO))TABLESPACE PASYS_DATA;
+
+
+-- 4  操作员权限表
+DROP TABLE T_OPR_AUTH;
+CREATE TABLE T_OPR_AUTH (
+	C_OPR_CDE	VARCHAR2(10)	CONSTRAINT NN_T_OPR_AUTH_C_OPR_CDE NOT NULL
+				CONSTRAINT FK_T_OPR_AUTH_C_OPR_CDE REFERENCES T_OPERATOR(C_OPR_CDE) /*操作员编号*/,
+	C_FUNC_CDE	VARCHAR2(5)	CONSTRAINT NN_T_OPR_AUTH_C_FUNC_CDE NOT NULL
+				CONSTRAINT FK_T_OPR_AUTH_C_FUNC_CDE REFERENCES T_SYS_FUNC(C_FUNC_CDE) /*功能编码*/,
+PRIMARY KEY (C_OPR_CDE,C_FUNC_CDE))TABLESPACE PASYS_DATA;
+
+
+-- 5  操作员管辖部门表
+DROP TABLE T_OPR_DPT;
+CREATE TABLE T_OPR_DPT (
+	C_OPR_CDE	VARCHAR2(10) NOT NULL	
+				CONSTRAINT FK_T_OPR_DPT_C_OPR_CDE REFERENCES T_OPERATOR(C_OPR_CDE) /*操作员编号*/,
+	C_DPT_CDE	VARCHAR2(11) NOT NULL
+				CONSTRAINT FK_T_OPR_DPT_C_DPT_CDE REFERENCES T_DEPARTMENT(C_DPT_CDE) /*机构编码*/,
+	C_SNR_DPT      VARCHAR2(11) NULL    /*上级机构编码*/,
+PRIMARY KEY (<LeftMouse><LeftRelease><LeftMouse><LeftRelease>C_OPR_CDE,C_DPT_CDE))TABLESPACE PASYS_DATA;
+
+
+-- 6  赔案摘要表
+DROP TABLE T_CLMDGST;
+CREATE TABLE T_CLMDGST (
+	C_PLY_NO	VARCHAR2(20)	NOT NULL   /* 保单号 */,
+	C_RPT_NO	VARCHAR2(20)	NOT NULL   /* 报案号 */,
+	C_INFO_NO	VARCHAR2(8)	NOT NULL   /* 摘要信息编号 */,
+	C_DIGEST	VARCHAR2(50)	NULL       /* 信息摘要 */,
+	C_CONTENT	VARCHAR2(500)	NULL       /* 信息内容 */,
+	C_INPUT_TM	DATE		NULL       /* 输入时间 */,
+PRIMARY KEY (C_PLY_NO,C_RPT_NO,C_INFO_NO))TABLESPACE PASYS_DATA;
+
+
+-- 7 网上会员表
+DROP TABLE T_PA18_USER;
+CREATE TABLE T_PA18_USER (
+	 C_CRT_CDE             NOT NULL VARCHAR2(30)    /* 创建人编号 */,
+	 T_CRT_TM              NOT NULL DATE DEFAULT SYSDATE     /* 创建时间 */,
+	 C_UPD_CDE             NOT NULL VARCHAR2(30)    /* 修改人编号 */,
+	 T_UPD_TM              NOT NULL DATE DEFAULT SYSDATE    /* 修改时间 */,
+	 C_USER_ID             NOT NULL VARCHAR2(16)    /* 会员编号 */,
+	 C_USER_NAME                    VARCHAR2(20)    /* 会员名称 */,
+	 C_USER_PW                      VARCHAR2(16)    /* 会员密码 */,
+	 C_PW_QUESTION                  VARCHAR2(100)    /* 忘记密码提示问题 */,
+	 C_PW_RESULT                    VARCHAR2(50)    /* 提示问题答案 */,
+	 C_CLNT_CDE                     VARCHAR2(12)    /* 会员客户编号 */,
+	 C_VERIFY              NOT NULL CHAR(1)    /* 会员审核标志 */,
+	 N_USER_SEQ_NO                  NUMBER(6)    /* 会员序号 */,
+	 C_CMPNY_AGT_CDE                VARCHAR2(12)    /* 代理编号 */,
+	 C_NET_CDE             NOT NULL VARCHAR2(12)    /* 网站编码 */,
+	 T_LASTLOGIN_TM        NOT NULL DATE            /* 最后登录时间 */,
+	 N_LOGIN               NOT NULL NUMBER(5)       /* 登录次数 */,
+	 C_VERIFY_DESC                  VARCHAR2(200)   /* 审核描述 */,
+	 T_VERIFY_TM                    DATE            /* 审核时间 */,
+	 C_EMAIL_FLAG          NOT NULL VARCHAR2(1)     /* 发送邮件标志 */,
+	 T_EMAIL_TM                     DATE            /* 邮件发送时间 */,
+	 C_EMAIL_SENDER                 VARCHAR2(20)    /* 邮件发送者 */,
+	 C_EMAIL_CONTENT                VARCHAR2(500)   /* 邮件内容 */,
+	 C_DPT_CDE                      VARCHAR2(11)    /* 会员所在地平安机构编码 */,
+	 C_CLNT_NME                     VARCHAR2(150)   /* 会员的客户名称 */,
+	 C_CLNT_MRK            NOT NULL VARCHAR2(1)     /* 会员的客户标志 */,
+	 C_EMAIL                        VARCHAR2(60)    /* 会员邮件地址 */,
+PRIMARY KEY (C_USER_ID))TABLESPACE PASYS_DATA;
+
+
+-- 8 事件日志表
+DROP TABLE T_PA18_LOG; 
+CREATE TABLE T_PA18_LOG (
+ C_LOG_ID            NOT NULL VARCHAR2(20)    /*日志编号 */,
+ T_LOG_TM            NOT NULL DATE DEFAULT SYSDATE    /* 日志记载时间 */,
+ C_USER_ID                    VARCHAR2(16)    /* 会员编号 */,
+ C_EVENT             NOT NULL VARCHAR2(2)    /* 事件编号 */,
+ C_EVENT_RSLT        NOT NULL VARCHAR2(1)    /* 事件结果 */,
+ C_RTN_MSG                    VARCHAR2(200)    /* 返回信息 */,
+PRIMARY KEY (C_LOG_ID))TABLESPACE PASYS_DATA;
+
+-- 9  后勤人员表
+DROP TABLE T_SUPPORT_EMAIL;
+CREATE TABLE T_SUPPORT_EMAIL (
+	T_CRT_TM	DATE DEFAULT SYSDATE NOT NULL     /* 创建时间 */,
+	C_SUPP_NO	VARCHAR2(10) NOT NULL		  /* 后勤人员编码 */,
+	C_EMP_CDE	VARCHAR2(10)			  /* 员工编码 */,
+	C_EMP_NME	VARCHAR2(60) NOT NULL 		  /* 员工名称 */,
+	C_DPT_CDE	VARCHAR2(11) NOT NULL		  /* 机构编码 */,
+	C_EMP_TYPE	VARCHAR2(10) DEFAULT '0000000000' NOT NULL	/* 后勤类型 */,
+	C_EMP_EMAIL	VARCHAR2(60) NOT NULL		  /* 员工邮件地址 */,,
+PRIMARY KEY (C_SUPP_NO)) TABLESPACE PASYS_DATA;
+
+
+-- 10  在线沟通信息表
+DROP TABLE T_PA18_CHAT;
+CREATE TABLE T_PA18_CHAT (
+	T_CRT_TM	DATE DEFAULT SYSDATE NOT NULL		/* 创建时间 */,
+	C_CHAT_NO	VARCHAR2(10) NOT NULL			/* 交谈流水号 */,
+	C_CHAT_NME	VARCHAR2(60) NOT NULL			/* 说话人名称 */,
+	C_CHAT_MRK	VARCHAR2(1) DEFAULT '0' NOT NULL        /* 说话人身份标志 */,
+	C_CHAT_CNTNT	VARCHAR2(500)				/* 说话内容 */,
+	C_CHAT_TTL	VARCHAR2(200)				/* 说话人标题 */,
+	T_BEGIN_TM	DATE					/* 交谈开始时间 */,
+	T_END_TM	DATE					/* 交谈结束时间 */,
+PRIMARY KEY (C_CHAT_NO)) TABLESPACE PASYS_DATA;
+
+
+--  11  客户咨询表
+DROP TABLE T_FAQ;
+CREATE TABLE T_FAQ (
+	 C_FAQ_NO            NOT NULL VARCHAR2(10)		/* 咨询信息编号 */,
+	 C_FAQ_PSN           NOT NULL VARCHAR2(30)		/* 咨询人名 */,
+	 C_FAQ_EMAIL         NOT NULL VARCHAR2(30)		/* 回复邮件地址 */,
+	 C_FAQ_TITLE         NOT NULL VARCHAR2(100)		/* 咨询标题 */,
+	 C_FAQ_CONTENT                VARCHAR2(500)		/* 咨询内容 */,
+	 T_FAQ_TM                     DATE DEFAULT SYSDATE 	/* 咨询时间 */,
+	 C_REPLY_CONT                 VARCHAR2(500)		/* 回复内容 */,
+	 C_REPLY_EMP                  VARCHAR2(30)		/* 回复人名 */,
+	 T_REPLY_TM                   DATE			/* 回复时间 */,
+PRIMARY KEY (C_FAQ_NO)) TABLESPACE PASYS_DATA;
+
+
+-- 12  保险咨询表  
+DROP TABLE T_FAQ_INFO；
+CREATE TABLE T_FAQ_INFO (
+	 C_FAQ_NO            NOT NULL VARCHAR2(10)          	/* 序号	    */, 
+	 C_FAQ_EMP           NOT NULL VARCHAR2(30)          	/* 输入人名 */, 
+	 C_FAQ_TITLE         NOT NULL VARCHAR2(100)         	/* 咨询标题 */, 
+	 C_FAQ_CONTENT                VARCHAR2(2000)        	/* 咨询内容 */, 
+	 T_FAQ_TM                     DATE DEFAULT SYSDATE     	/* 输入时间 */, 
+	 C_TOPIC_NO                   VARCHAR2(10)        	/* 所属栏目 */, 
+PRIMARY KEY (C_FAQ_NO)) TABLESPACE PASYS_DATA;
+
+-- 13  投保指南信息表  
+DROP TABLE T_INSRNC_GUIDE;
+CREATE TABLE T_INSRNC_GUIDE (
+	 C_INFO_NO           NOT NULL VARCHAR2(10)		/* 信息编码 */,
+	 C_TITLE_NO          NOT NULL VARCHAR2(5)		/* 显示序号 */,
+	 C_TITLE_CNM         NOT NULL VARCHAR2(100)		/* 中文标题 */,
+	 C_TITLE_ENM                  VARCHAR2(100)		/* 英文标题 */,
+	 C_CONTENT_CNM                VARCHAR2(2000)		/* 中文内容 */,
+	 C_CONTENT_ENM                VARCHAR2(2000)		/* 英文内容 */,
+	 T_CRT_TM                     DATE DEFAULT SYSDATE	/* 创建时间 */,	
+PRIMARY KEY (C_INFO_NO)) TABLESPACE PASYS_DATA;
+
+-- 14 网站事件表
+DROP TABLE T_PA18_EVENT;
+CREATE TABLE T_PA18_EVENT (
+	 C_EVENT            NOT NULL VARCHAR2(2)	 /* 事件编码*/,
+	 C_EVENT_CNM        NOT NULL VARCHAR2(20)	 /* 事件中文描述*/,
+) TABLESPACE PASYS_DATA;
+
+-- 15  会员帐号和客户编码对应表
+DROP TABLE T_CLNT_MAP;
+CREATE TABLE T_CLNT_MAP(
+	 T_CRT_TM            NOT NULL DATE		/* 创建时间 */,
+	 C_USER_ID           NOT NULL VARCHAR2(20)      /* 会员帐号 */,
+	 C_CLNT_CDE                   VARCHAR2(12)      /* 会员客户编号 */,
+	 C_UNDR_CDE                   VARCHAR2(10)      /* 核准人 */,
+	 C_MAIN_FLG                   VARCHAR2(1)	/* 主帐号标志 */,
+	 T_ADB_TM                     DATE		/* 生效时间 */,
+	 C_CMPNY_AGT_CDE              VARCHAR2(20)	/* 代理人码 */,
+PRIMARY KEY (C_USER_ID,C_CLNT_CDE))TABLESPACE PASYS_DATA;
+
+-----------------------
+
+DROP SEQUENCE mcip_funcseq ;
+
+CREATE SEQUENCE mcip_funcseq 
+  INCREMENT BY 1
+  START WITH 00001
+  MAXVALUE 99999 CYCLE
+  ORDER  ;
+
+DROP SEQUENCE mcip_pageseq ;
+
+CREATE SEQUENCE mcip_pageseq 
+  INCREMENT BY 1
+  START WITH 00001
+  MAXVALUE 99999 CYCLE
+  ORDER  ;
+
+
+DROP SEQUENCE mcip_faqseq ;
+
+CREATE SEQUENCE mcip_faqseq 
+  INCREMENT BY 1
+  START WITH 0000000001
+  MAXVALUE 9999999999 CYCLE
+  ORDER  ;
+
+DROP SEQUENCE mcip_consultseq ;
+
+CREATE SEQUENCE mcip_consultseq 
+  INCREMENT BY 1
+  START WITH 0000000001
+  MAXVALUE 9999999999 CYCLE
+  ORDER  ;
+
+DROP SEQUENCE mcip_guideseq ;
+
+CREATE SEQUENCE mcip_guideseq 
+  INCREMENT BY 1
+  START WITH 0000000001
+  MAXVALUE 9999999999 CYCLE
+  ORDER  ;
+
+DROP SEQUENCE mcip_clmdgstseq ;
+
+CREATE SEQUENCE mcip_clmdgstseq 
+  INCREMENT BY 1
+  START WITH 00000001
+  MAXVALUE 99999999 CYCLE
+  ORDER  ;
+
+SELECT LPAD(mcip_funcseq.NEXTVAL,5,'0')||LPAD(mcip_pageseq.NEXTVAL,5,'0') FROM DUAL;
+
+CREATE SEQUENCE MCIP_LOGSEQ
+INCREMENT BY 1
+START WITH 1
+MAXVALUE '9999999999'
+CYCLE
+;
+
+
+DROP SEQUENCE MCIP_CHATSEQ;
+
+CREATE SEQUENCE MCIP_CHATSEQ
+INCREMENT BY 1
+START WITH 0000000001
+MAXVALUE 9999999999 CYCLE
+ORDER;
+
+
+DROP SEQUENCE MCIP_SUPPORTSEQ;
+
+CREATE SEQUENCE MCIP_SUPPORTSEQ
+INCREMENT BY 1
+START WITH 0000000001
+MAXVALUE 9999999999 CYCLE
+ORDER;

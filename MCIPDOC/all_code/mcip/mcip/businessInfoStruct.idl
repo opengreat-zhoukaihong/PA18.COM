@@ -1,0 +1,107 @@
+module com
+{
+  module mcip
+  {
+    module bus
+    {
+      module orb
+      {
+
+       /*This Structure defination for holding the information of Business module "T_OPERATOR" table */
+      struct OperatorInfo        //Operator information
+      {
+  wstring c_opr_cde;             //Operator ID code
+  string c_opr_pw;              //Operator password
+  string c_emp_cde;             //Operator's employee code
+  string c_dpt_cde;             //Operator's deparment code
+  wstring c_acredt_cde;          //the creater or authorization person's employee code
+  string c_sys_admin;          //the mark of system super administrator or general operator. "0" -- general operator; "1" -- system administrator
+      };
+
+       /*This Structure defination for holding the information of SYSTEM FUNCTION */
+      struct SysFuncInfo        //System Function information
+      {
+  string c_func_cde;            //system function id code
+  wstring c_func_cnm;           //system function chinese name
+  wstring c_func_enm;            //system function english name
+      };
+
+      /*This Structure defination for holding the information of T_PAGES_MANAGER */
+      struct PagesInfo          //pages manager information
+      {
+  string c_page_no;             //web page number
+  wstring c_page_title;         //web page chinese title
+  wstring c_file_enm;            //web page english title
+  string c_func_cde;            //the system function id code
+  string t_edit_tm;             //the lasted edit time of this web page
+      };
+
+      /*This Structure defination for holding the information of "T_OPR_AUTHORITY" Table */
+      struct OprAuthInfo        //Operator authority right information
+      {
+  string c_opr_cde;             //operator id code
+  string c_func_cde;            //the system function id code
+      };
+
+      /*This Structure defination for holding the information of "T_OPR_DPT" Table */
+      struct OprDptInfo        //Operator's department information
+      {
+  string c_opr_cde;            //operator id code
+  string c_dpt_cde;            //the operator department code
+      };
+
+      /*This Structure defination for holding the information of "T_FAQ" Table */
+      struct CustFaqInfo        //Customer FAQ information
+      {
+  wstring c_faq_no;            //FAQ Sequence number
+  wstring c_faq_psn;           //FAQ person name
+  wstring c_faq_email;         //FAQ contact email
+  wstring c_faq_title;         //FAQ title
+  wstring c_faq_content;       //FAQ content
+  string t_faq_tm;             //FAQ time
+  wstring c_reply_cont;        //FAQ reply content
+  wstring c_reply_emp;         //FAQ reply employee code
+  string t_reply_tm;           //FAQ reply time
+      };
+
+      /*This Structure defination for holding the information of "T_FAQ_INFO" Table */
+      struct InsrncFaqInfo        //Insurance FAQ information
+      {
+  wstring c_faq_no;            //FAQ Sequence number
+  wstring c_faq_emp;           //FAQ employee name
+  wstring c_faq_title;         //FAQ title
+  wstring c_faq_content;       //FAQ content
+  string t_faq_tm;             //FAQ time
+  wstring c_topic_no;          //FAQ topic name
+      };
+
+      /*This Structure defination for holding the information of "T_INSRNC_GUIDE" Table */
+      struct InsrncGuideInfo        //Insurance GUIDE information
+      {
+  wstring c_info_no;           // Sequence number
+  wstring c_title_no;          // Title number
+  wstring c_title_cnm;         // Chinese Title
+  wstring c_title_enm;         // English title
+  wstring c_content_cnm;       // Chinese content
+  wstring c_content_enm;       // English content
+  string t_crt_tm;             // create time
+      };
+
+      /*This Structure defination for holding the information of "T_CLMDGST" Table */
+      struct ClmDgstInfo       // Claim Digest information
+      {
+  wstring c_ply_no;            // Policy number
+  wstring c_rpt_no;            // Report number
+  wstring c_info_no;           // Info sequence number
+  wstring c_digest;            // digest info
+  wstring c_content;           // Content detailed information
+  string t_input_tm;           // create time
+      };
+
+
+     };
+    };
+  };
+};
+
+

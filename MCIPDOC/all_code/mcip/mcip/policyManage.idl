@@ -1,0 +1,58 @@
+/*This interface file that defined here is used for PA18.com MCIP */
+/*This interface file that defined here is Provided by C&T Solution */
+/*The version of this interface file that defined here is Ver 1.0 */
+/*This interface file that defined here is written by YiJinFeng */
+
+#include "policyInfoStruct.idl"
+
+
+module com
+{
+  module mcip
+  {
+    module nia   // interNetwork Insurance Policy Manager
+    {
+      module orb
+      {
+        interface PolicyManager
+        {
+        // Accept the policy Case Report form object and processing them, return case report number to client
+          com::mcip::orb::Stringss acceptCaseRpt(in CaseRptInfo caserptinfoobj)
+              raises (com::mcip::orb::CoException);
+
+        // Accept the policy Endorsemenr apply form object and processing them, return proposal to client
+          com::mcip::orb::Stringss acceptPolicyEdr(in PlyEdrAppInfo plyedrappinfoobj, in PlyEdrAppCrgoInfo plyedrappcrgoinfoobj,
+                      in com::mcip::orb::Stringss rdrinfo, in PlyEdrAppPayInfo plyedrapppayinfoobj, in PlyPlyAppNetInfo plyplyappnetinfoobj)
+              raises (com::mcip::orb::CoException);
+
+        // Get the policy Endorsemenr apply form object and processing them, return proposal to client
+          void getPolicyEdr(in PlyGetDocInfo plygetdocinfoobj, out any plyedrapp, out any plyedrappcrgo,
+                            out any plyedrapprdr, out any plyedrapppay, out any plyplyappnet)
+              raises (com::mcip::orb::CoException);
+
+        // withdrawal the Policy Endorsement apply form from BackEnd System, return result to client
+        boolean withdrawalEdrApp(in string edr_app_no)
+         raises (com::mcip::orb::CoException);
+
+        // Get the policy Endorsemenr apply form object and processing them, return proposal to client
+          void getEdrAppInfo(in PlyEdrGridInfo plyedrgridinfoobj, out any plyedrapp, out any plyedrappcrgo,
+                            out any plyedrapprdr, out any plyedrapppay, out any plyplyappnet)
+              raises (com::mcip::orb::CoException);
+
+        // confirm the endorsement application proposal object and processing them, return Endorsement Number to client
+        com::mcip::orb::Stringss confirmEdrAppProposal(in string edrapp_no, in string dpt_cde, in string insrnc_cde)
+         raises (com::mcip::orb::CoException);
+
+        // cancel or delete the Policy Endorsement apply form from BackEnd System, return result to client
+        boolean deleteEdrApp(in string edr_app_no)
+         raises (com::mcip::orb::CoException);
+
+
+
+
+
+         };
+      };
+    };
+  };
+};

@@ -1,0 +1,63 @@
+/*This interface file that defined here is used for PA18.com MCIP */
+/*This interface file that defined here is Provided by C&T Solution */
+/*The version of this interface file that defined here is Ver 1.0 */
+/*This interface file that defined here is written by YiJinFeng */
+
+#include "policyInfoStruct.idl"
+
+
+module com
+{
+  module mcip
+  {
+    module nia   // interNetwork Insurance Apply
+    {
+      module orb
+      {
+        interface PolicyAppManager
+      {
+        // Accept the policy apply form object and processing them, return proposal to client
+        com::mcip::orb::Stringss acceptPolicyApp(in PlcyAppInfo plcyappinfoobj, in com::mcip::orb::Stringss rdrinfo)
+         raises (com::mcip::orb::CoException);
+
+        // withdrawal the policy apply form object and processing them, return result to client
+        boolean withdrawalPolicyApp(in string plcyapp_no)
+         raises (com::mcip::orb::CoException);
+
+        // update the policy apply form object and processing them, return proposal to client
+        com::mcip::orb::Stringss updatePolicyApp(in PlcyAppInfo plcyappinfoobj, in com::mcip::orb::Stringss rdrinfo)
+         raises (com::mcip::orb::CoException);
+
+        // confirm the policy application proposal object and processing them, return proposal to client
+        com::mcip::orb::Stringss confirmPolicyAppProposal(in string plcyapp_no, in string dpt_cde, in string insrnc_cde,in string undr_prsn)
+         raises (com::mcip::orb::CoException);
+
+        // Accept Customer's advices and remark as confirm porposal
+        boolean acceptUserRemark(in string plcyapp_no, in string app_cde, in wstring user_remark, in string app_typ)
+         raises (com::mcip::orb::CoException);
+
+        // delete the policy apply form object and processing them, return result to client
+        boolean deletePolicyApp(in string plcyapp_no)
+         raises (com::mcip::orb::CoException);
+
+        // update policy payment flag set c_pay_flag of t_policy_net = pay_flag
+        boolean updatePayFlag(in string plcy_no, in string pay_flag, in string app_typ)
+         raises (com::mcip::orb::CoException);
+
+      };
+    };
+    };
+  };
+};
+
+
+
+
+
+
+
+
+
+
+
+

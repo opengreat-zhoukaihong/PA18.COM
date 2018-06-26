@@ -1,0 +1,104 @@
+//getStaticInfo.idl
+/*This interface file that defined here is used for PA18.com MCIP */
+/*This interface file that defined here is Provided by C&T Solution */
+/*The version of this interface file that defined here is Ver 1.0 */
+/*This interface file that defined here is written by YiJinFeng */
+/*This interface file that defined here is used to get code table information that commonly used in programme*/
+/*This interface is used to get the (static) code table content for web page combobox */
+
+#include "CorbaDataType.idl"
+#include "exceptions.idl"
+
+module com
+{
+  module mcip
+  {
+    module cdt // code table information
+    {
+       module orb   // customer information manage
+       {
+        interface staticInfoManager
+        {
+        	com::mcip::orb::Stringss getNationalList(in string cde)    // Get nation code list
+         raises (com::mcip::orb::CoException);
+          com::mcip::orb::Stringss getAreaList(in string cde)        // Get area code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getProvinceList(in string cde)        // Get area code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getCityList(in string cde)        // Get area code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getEduList(in string cde)         // Get education code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getTitleList(in string cde)       // Get employee position title code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getDutyList(in string cde)        // Get employee position duty code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getTradeTypeList(in string cde)   // Get trade type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getOrgTypeList(in string cde)     // Get organization type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getOwnershipList(in string cde)   // Get organization ownership type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getScaleList(in string cde)       // Get organization scale type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getPremiumScaleList(in string cde)  // Get organization premium scale type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getCurrencyList(in string cde)      // Get currency type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getCargoClsList(in string cde,in string insrnc_cde)      // Get cargo class type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getCargoTypeList(in string Cargocls)    // Get cargo detailed type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getPackList(in string cde)          // Get cargo packet type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getExchangeRateList(in string cur1,in string cur2)   // Get exchange rate list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getPayModeList(in string cde)       // Get payment term type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getInsuranceClassList(in string cde)    // Get insurance class type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getInsuranceDefineList(in string cde)   // Get insurance define type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getInsuranceTypeList(in string cde)     // Get insurance type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getClauseList(in string insrnc_cde,in string claus_cde, in string add_mrk)            // Get insurance clause type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getEndorseReasonList(in string cde)     // Get endorse reason info
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getDepartmentList(in string cde)        // Get department code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getAgentCharacterList(in string cde)    // Get Agency feature type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getSurveyAgentList(in string cde)       // Get Survey Agency type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getCarriageList(in string cde)          // Get Carriage mode list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getVslLevelList(in string cde)          // get Vsl Level type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getCertificateList(in string cde)       // Get certificate type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getMajorList(in string cde)             // Get major type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getMarriageList(in string cde)          // Get marriage type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getSexList(in string cde)               // Get sex type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getEmployeeCodeList(in string cde)      // Get employee code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getPACrgoClsTypList(in wstring in_crgo_cde,in wstring in_site_cde)      // Get PA18 Cargo CLS & TYPE code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getNetCodeList(in wstring in_net_cde)      // Get Cyber WEB Site code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getCurrencyInfo(in string cde)      // Get currency type code list
+         raises (com::mcip::orb::CoException);
+        	com::mcip::orb::Stringss getRptTelNum(in string in_dpt_cde)      // Get report telephone number of related department
+         raises (com::mcip::orb::CoException);
+
+	//------------------------and more here------------------------//
+        };
+      };
+    };
+  };
+};
+
+

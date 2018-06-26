@@ -1,0 +1,25 @@
+
+<html>
+<head>
+<title>平安保险在线沟通</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link REL=STYLESHEET TITLE=text TYPE=text/css href=../index.css>
+</head>
+
+<body bgcolor="#0088ee" leftmargin="0" topmargin="0">
+<div align="center">
+<p align="center">主题:*******</p>
+<form name="form1">
+<table border=1 width="98%">
+<tr> <td width=50%>客户 :<input type="text" name="clientName"></td>
+     <td width=50%>核保人:<input type="text" name="serverName"></td>
+</tr>
+<tr><td width=50%><textarea name="clientMsgs" cols=45 rows=20></textarea></td>
+    <td width=50%><textarea name="serverMsgs" cols=45 rows=20></textarea></td>
+</tr>
+</table>
+</form>
+</div>
+</body>
+</html>
+<td><a href="Accept.jsp?ct=<%=client.GetClientName()%>&sv=<%=myName%>" onclick="js_openMeetingSmallPageI('Accept.jsp?ct=<%=client.GetClientName()%>&sv=<%=myName%>','<%=client.GetClientName()%>')" ><%=client.GetClientName()%></a></td>

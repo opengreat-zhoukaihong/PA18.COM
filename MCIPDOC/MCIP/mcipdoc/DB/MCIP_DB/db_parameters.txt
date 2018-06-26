@@ -1,0 +1,198 @@
+processes                          255                                          
+sessions                           285                                          
+timed_statistics                   FALSE                                        
+timed_os_statistics                0                                            
+resource_limit                     FALSE                                        
+license_max_sessions               0                                            
+license_sessions_warning           0                                            
+cpu_count                          1                                            
+instance_groups                                                                 
+event                                                                           
+shared_pool_size                   52428800                                     
+shared_pool_reserved_size          2621440                                      
+large_pool_size                    0                                            
+java_pool_size                     20971520                                     
+java_soft_sessionspace_limit       0                                            
+java_max_sessionspace_size         0                                            
+pre_page_sga                       FALSE                                        
+shared_memory_address              0                                            
+hi_shared_memory_address           0                                            
+use_indirect_data_buffers          FALSE                                        
+lock_sga                           FALSE                                        
+lock_name_space                                                                 
+enqueue_resources                  3200                                         
+nls_language                       AMERICAN                                     
+nls_territory                      AMERICA                                      
+nls_sort                                                                        
+nls_date_language                                                               
+nls_date_format                                                                 
+nls_currency                                                                    
+nls_numeric_characters                                                          
+nls_iso_currency                                                                
+nls_calendar                                                                    
+nls_time_format                                                                 
+nls_timestamp_format                                                            
+nls_time_tz_format                                                              
+nls_timestamp_tz_format                                                         
+nls_dual_currency                                                               
+nls_comp                                                                        
+disk_asynch_io                     TRUE                                         
+tape_asynch_io                     TRUE                                         
+dbwr_io_slaves                     8                                            
+backup_tape_io_slaves              FALSE                                        
+db_file_direct_io_count            64                                           
+resource_manager_plan                                                           
+lm_procs                           127                                          
+lm_ress                            6000                                         
+lm_locks                           12000                                        
+control_files                      /data1/oracle81/app/oracle/oradata/pty211/control0                                                                           
+db_file_name_convert                                                            
+log_file_name_convert                                                           
+db_block_buffers                   10000                                        
+buffer_pool_keep                                                                
+buffer_pool_recycle                                                             
+db_block_checksum                  FALSE                                        
+db_block_size                      16384                                        
+db_block_lru_latches               1                                            
+db_writer_processes                1                                            
+db_block_max_dirty_target          10000                                        
+max_commit_propagation_delay       700                                          
+compatible                         8.1.0                                        
+log_archive_start                  FALSE                                        
+log_archive_dest                                                                
+log_archive_duplex_dest                                                         
+log_archive_dest_1                                                              
+log_archive_dest_2                                                              
+log_archive_dest_3                                                              
+log_archive_dest_4                                                              
+log_archive_dest_5                                                              
+log_archive_dest_state_1           enable                                       
+log_archive_dest_state_2           enable                                       
+log_archive_dest_state_3           enable                                       
+log_archive_dest_state_4           enable                                       
+log_archive_dest_state_5           enable                                       
+log_archive_max_processes          1                                            
+log_archive_min_succeed_dest       1                                            
+standby_archive_dest               ?/dbs/arch                                   
+log_archive_format                 %t_%s.dbf                                    
+log_buffer                         81920                                        
+log_checkpoint_interval            100000000                                    
+log_checkpoint_timeout             1800                                         
+db_files                           200                                          
+db_file_multiblock_read_count      8                                            
+read_only_open_delayed             FALSE                                        
+parallel_server                    FALSE                                        
+parallel_server_instances          1                                            
+gc_releasable_locks                0                                            
+gc_rollback_locks                                                               
+gc_files_to_locks                                                               
+gc_defer_time                      10                                           
+thread                             0                                            
+fast_start_io_target               10000                                        
+log_checkpoints_to_alert           FALSE                                        
+recovery_parallelism               0                                            
+control_file_record_keep_time      7                                            
+dml_locks                          2048                                         
+row_locking                        always                                       
+serializable                       FALSE                                        
+replication_dependency_tracking    TRUE                                         
+instance_number                    0                                            
+transactions                       313                                          
+transactions_per_rollback_segment  5                                            
+max_rollback_segments              62                                           
+rollback_segments                  r01, r02, r03, r04, r05, r06, r07, r08       
+transaction_auditing               TRUE                                         
+fast_start_parallel_rollback       LOW                                          
+db_block_checking                  FALSE                                        
+ent_domain_name                                                                 
+os_roles                           FALSE                                        
+rdbms_server_dn                                                                 
+max_enabled_roles                  20                                           
+remote_os_authent                  FALSE                                        
+remote_os_roles                    FALSE                                        
+O7_DICTIONARY_ACCESSIBILITY        TRUE                                         
+remote_login_passwordfile          EXCLUSIVE                                    
+dblink_encrypt_login               FALSE                                        
+license_max_users                  0                                            
+db_domain                                                                       
+global_names                       FALSE                                        
+distributed_transactions           500                                          
+commit_point_strength              1                                            
+service_names                      pty211                                       
+instance_name                      pty211                                       
+mts_servers                        1                                            
+mts_max_servers                    20                                           
+mts_max_dispatchers                5                                            
+local_listener                                                                  
+mts_service                        pty211                                       
+mts_listener_address                                                            
+mts_multiple_listeners             FALSE                                        
+open_links                         4                                            
+open_links_per_instance            4                                            
+optimizer_features_enable          8.1.5                                        
+fixed_date                                                                      
+audit_trail                        NONE                                         
+sort_area_size                     65536                                        
+sort_area_retained_size            0                                            
+sort_multiblock_read_count         2                                            
+db_name                            pty211                                       
+open_cursors                       50                                           
+ifile                                                                           
+sql_trace                          FALSE                                        
+os_authent_prefix                                                               
+optimizer_mode                     CHOOSE                                       
+sql92_security                     FALSE                                        
+blank_trimming                     FALSE                                        
+always_anti_join                   NESTED_LOOPS                                 
+partition_view_enabled             FALSE                                        
+star_transformation_enabled        FALSE                                        
+parallel_broadcast_enabled         FALSE                                        
+parallel_adaptive_multi_user       FALSE                                        
+parallel_threads_per_cpu           2                                            
+parallel_automatic_tuning          FALSE                                        
+always_semi_join                   standard                                     
+optimizer_max_permutations         80000                                        
+optimizer_index_cost_adj           100                                          
+optimizer_index_caching            0                                            
+query_rewrite_enabled              FALSE                                        
+query_rewrite_integrity            enforced                                     
+serial_reuse                       DISABLE                                      
+cursor_space_for_time              FALSE                                        
+session_cached_cursors             0                                            
+text_enable                        FALSE                                        
+remote_dependencies_mode           TIMESTAMP                                    
+utl_file_dir                                                                    
+plsql_v2_compatibility             FALSE                                        
+plsql_load_without_compile         FALSE                                        
+job_queue_processes                0                                            
+job_queue_interval                 60                                           
+optimizer_percent_parallel         0                                            
+optimizer_search_limit             5                                            
+parallel_min_percent               0                                            
+create_bitmap_area_size            8388608                                      
+bitmap_merge_area_size             1048576                                      
+parallel_min_servers               0                                            
+parallel_max_servers               5                                            
+parallel_instance_group                                                         
+parallel_execution_message_size    2148                                         
+hash_join_enabled                  TRUE                                         
+hash_area_size                     131072                                       
+hash_multiblock_io_count           0                                            
+shadow_core_dump                   partial                                      
+background_core_dump               partial                                      
+background_dump_dest               /data1/oracle81/app/oracle/admin/pty211/bdump
+user_dump_dest                     /data1/oracle81/app/oracle/admin/pty211/udump
+max_dump_file_size                 10000                                        
+core_dump_dest                     /data1/oracle81/app/oracle/admin/pty211/cdump
+audit_file_dest                    ?/rdbms/audit                                
+oracle_trace_enable                FALSE                                        
+oracle_trace_facility_path         ?/otrace/admin/fdf                           
+oracle_trace_collection_path       ?/otrace/admin/cdf                           
+oracle_trace_facility_name         oracled                                      
+oracle_trace_collection_name                                                    
+oracle_trace_collection_size       5242880                                      
+object_cache_optimal_size          102400                                       
+object_cache_max_size_percent      10                                           
+session_max_open_files             10                                           
+aq_tm_processes                    0                                            
+hs_autoregister                    TRUE                                         

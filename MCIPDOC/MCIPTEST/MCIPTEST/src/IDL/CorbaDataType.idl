@@ -1,0 +1,8 @@
+module com {
+  module mcip {
+    module orb {
+        typedef sequence<wstring> Strings;
+        typedef sequence<Strings> Stringss;
+    };
+  };
+};

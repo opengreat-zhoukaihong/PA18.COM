@@ -1,0 +1,106 @@
+module com
+{
+  module mcip
+  {
+    module cus            
+    {
+      module orb
+      {
+        struct CustOrgn                    // organization customer
+        {
+	string c_clnt_cde;      //customer ID code
+	string c_dpt_cde;       //department code
+	long n_clnt_grp_cde;        //customer group code as default 1
+	string c_clnt_mrk;      //customer mark code as default 0
+	wstring c_clnt_nme;      //customer chinese name
+	wstring c_chn_abr;       //customer chinese name abstract
+	string c_auth_mrk;      //customer authorization mark code as default N
+	string c_scale_cde;     //customer enterprise scale code
+	string c_clnt_scle_cde; //customer enterprise premium scale code
+	string c_orgz_typ_cde;  //customer enterprise organization type code
+	wstring c_brd_enm;       //customer english name
+	wstring c_eng_abr;       //customer english name abstract
+	string c_ownership_cde; //customer enterprise ownership code as default 1
+	string c_rgst_no;       //customer enterprise register number or personal ID
+	string c_tax_no;        //customer enterprise tax number
+	double n_rgst_mny;      //customer enterprise register capital
+	wstring c_chief;        //customer enterprise CEO
+	long n_emly_num;        //customer enterprise employee quantity
+	string c_trd_cde;       //customer enterprise trade code
+	string c_upr_dpt_cde;   //customer enterprise headquarter code
+	string c_impt_clnt_cde; //customer enterprise VIP code
+	wstring c_cntct_prsn_nme;//custoner contacting person name
+	string c_tel;           //customer contacting telephone number
+	string c_fax;           //customer contacting fax number
+	wstring c_email;         //customer contacting e_mail
+	wstring c_clnt_addr;     //customer enterprise address
+	string c_ara_cde;       //customer area code or country code
+	wstring c_province;       //customer address province
+	wstring c_city;          //customer address city
+	wstring c_place;         //customer detailed address
+	string c_zip_cde;       //customer post zip code
+	wstring c_bank;          //customer account bank
+	string c_accnt_no;      //customer account number
+	wstring c_remark;        //customer remark information
+  string t_upd_tm;         //record update time, format as "YYYY-MM-DD hh:mm:ss"
+      };
+
+      struct CustPrsn                    // individual person customer
+      {
+	string c_clnt_cde;      //customer ID code
+	string c_dpt_cde;       //department code
+	long n_clnt_grp_cde;        //customer group code as default 1
+	string c_clnt_mrk;      //customer mark code as default 0
+	wstring c_clnt_nme;      //customer chinese name
+	wstring c_chn_abr;       //customer chinese name abstract
+	string c_auth_mrk;      //customer authorization mark code as default N
+	wstring c_brd_enm;       //customer english name
+	wstring c_eng_abr;       //customer english name abstract
+	string c_rgst_no;       //customer enterprise register number or personal ID
+	string c_sex;           //customer sex default as M
+	wstring c_hmtwn;         //customer ji guan
+	string c_ntn_cde;       //customer nature code
+	string t_birthday;      //customer birthday
+	string c_mrg_cde;       //customer marriage status
+	wstring c_grdt;          //customer graduation scool
+	string c_major_cde;     //customer graduation major subject code
+	string c_edu_cde;       //customer education level code
+	wstring c_work_dpt;      //customer work department
+	string c_title_cde;     //custoner position title code
+	string c_duty;          //customer position duty
+	string c_tel;           //customer contacting telephone number
+	string c_fax;           //customer contacting fax number
+	wstring c_email;         //customer contacting e_mail
+	wstring c_clnt_addr;     //customer enterprise address
+	string c_ara_cde;       //customer area code or country code
+	wstring c_province;       //customer address province
+	wstring c_city;          //customer address city
+	wstring c_place;         //customer detailed address
+	string c_zip_cde;       //customer post zip code
+	wstring c_bank;          //customer account bank
+	string c_accnt_no;      //customer account number
+	wstring c_remark;        //customer remark information
+	string c_impt_clnt_cde; //customer enterprise VIP code
+  string t_upd_tm;         //record update time, format as "YYYY-MM-DD hh:mm:ss"
+      };
+
+      struct CustEntity                   // customer entity information
+      {
+	//login informatoin
+  wstring c_user_id;
+	wstring c_user_name;
+	string c_user_pw;
+	wstring c_pw_question;
+	wstring c_pw_result;
+	string c_clnt_cde;               //customer ID code
+	long n_user_seq_no;              //customer register code
+	char c_verify;                   //customer verified mark
+  string c_cmpny_agt_cde;          //customer agent code
+  string c_net_id;                 //internet business mark
+      };
+     };
+    };
+  };
+};
+
+

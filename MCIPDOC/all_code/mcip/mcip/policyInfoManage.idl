@@ -1,0 +1,179 @@
+/*This interface file that defined here is used for PA18.com MCIP */
+/*This interface file that defined here is Provided by C&T Solution */
+/*The version of this interface file that defined here is Ver 1.0 */
+/*This interface file that defined here is written by YiJinFeng */
+/*Ref:LK0001
+**Date:2001-11-27 10:43:05
+**Purpose:add new functions for policy print
+**/
+#include "policyInfoStruct.idl"
+
+
+module com
+{
+  module mcip
+  {
+    module nia   // interNetwork Insurance Apply
+    {
+      module orb
+      {
+        interface PolicyInfoManager
+        {
+        // enter customer client code and insurance code for query Open cover List
+       	 com::mcip::orb::Stringss getOCList(in wstring user_id, in string insrnc_cde)
+         raises (com::mcip::orb::CoException);
+
+
+        // enter Open Cover code for query Open cover detailed info
+
+       	 com::mcip::orb::Stringss getOCInfo(in string OC_cde, in string insrnc_cde, in string crgo_cde)
+         raises (com::mcip::orb::CoException);
+	
+	//LK0001+B
+       	 wstring getPrintFormat(in wstring _incondStr)
+         raises (com::mcip::orb::CoException);
+       	 wstring getPrintPolicy(in wstring _incondStr)
+         raises (com::mcip::orb::CoException);
+
+	//LK0001+E
+        // enter customer client code and insurance code for query Agency contract List
+     	 com::mcip::orb::Stringss getAgencyList(in wstring clnt_cde, in string insrnc_cde)
+               raises (com::mcip::orb::CoException);
+
+        // enter agent contract code for query agent contract information
+     	 com::mcip::orb::Stringss getAgencyInfo(in string agt_agr_cde, in string insrnc_cde, in string crgo_cde, in string crgo_typ)
+               raises (com::mcip::orb::CoException);
+
+        // enter agency contract number for query agency's Policy Form List
+     	 com::mcip::orb::Stringss getAgencyPlcyList(in string agt_agr_cde, in string insrnc_cde, in string credit_id)
+               raises (com::mcip::orb::CoException);
+
+        // enter customer client code and insurance code for query Policy Form List
+     	 com::mcip::orb::Stringss getCustPlcyList(in wstring user_id, in string insrnc_cde, in string credit_cde)
+               raises (com::mcip::orb::CoException);
+
+        // enter customer client code, policy apply form number and Apply time scale for query PolicyApp Form List
+     	 com::mcip::orb::Stringss getPolicyAppList(in wstring user_id, in string plyapp_cde, in string app_from_tm, in string app_to_tm, in string cust_typ)
+               raises (com::mcip::orb::CoException);
+
+        // enter policy Apply form number for query policy Apply form infromation
+     	 com::mcip::orb::Stringss getPolicyAppInfo(in string plyapp_cde)
+               raises (com::mcip::orb::CoException);
+
+        // enter customer client code, policy form number and Apply time scale for query Policy Form List
+     	 com::mcip::orb::Stringss getPolicyList(in wstring user_id, in string policy_cde, in string app_from_tm, in string app_to_tm, in string cust_typ)
+               raises (com::mcip::orb::CoException);
+
+        // enter policy form number for query policy form infromation
+     	 com::mcip::orb::Stringss getPolicyInfo(in string policy_cde)
+               raises (com::mcip::orb::CoException);
+		// get the latest policy info
+		 com::mcip::orb::Stringss getPolicyInfoLatest(in string policy_cde)
+		       raises (com::mcip::orb::CoException);
+        // enter policy apply form number for query proposal infromation
+     	 com::mcip::orb::Stringss getProposalInfo(in string plyapp_cde)
+               raises (com::mcip::orb::CoException);
+
+        // enter policy endorsing application form number for query endorsing proposal infromation
+     	 com::mcip::orb::Stringss getEndorseProposalInfo(in string edrapp_cde)
+               raises (com::mcip::orb::CoException);
+
+        // enter policy application form RDR table infromation
+     	 com::mcip::orb::Stringss getPlyAppRdrInfo(in string in_plyapp_cde)
+               raises (com::mcip::orb::CoException);
+
+        // enter policy form RDR table infromation
+     	 com::mcip::orb::Stringss getPlyRdrInfo(in string in_ply_cde)
+               raises (com::mcip::orb::CoException);
+
+// For Iteration TWO interface   sep 10, 2000
+        // for query Case Report List
+
+     	 com::mcip::orb::Stringss getCaseRptList(in wstring in_user_id,in string in_rpt_no,
+                in string in_from_tm, in string in_to_tm, in string in_cust_typ)
+               raises (com::mcip::orb::CoException);
+
+        // for query Case report information
+     	 com::mcip::orb::Stringss getCaseRptInfo(in string in_rpt_no)
+               raises (com::mcip::orb::CoException);
+
+        // for query Case Report and Claim List
+
+     	 com::mcip::orb::Stringss getCaseClmList(in string in_rpt_no, in string in_status_mrk)
+               raises (com::mcip::orb::CoException);
+
+        // for query Claim List
+
+     	 com::mcip::orb::Stringss getClaimList(in string in_clnt_cde, in string in_rpt_no, in string in_clm_no,
+                in string in_from_tm, in string in_to_tm, in string in_status_mrk)
+               raises (com::mcip::orb::CoException);
+
+        // for query Claim Digest information List
+
+     	 com::mcip::orb::Stringss getClmDgstList(in string in_rpt_no, in string in_ply_no)
+               raises (com::mcip::orb::CoException);
+
+        // for query Quotation via Web
+
+     	 com::mcip::orb::Stringss getQuotation(in QuotaCndtn quotacndtnobj, in wstring rdr_type)
+               raises (com::mcip::orb::CoException);
+
+        // for query Quotation via Web
+
+     	 com::mcip::orb::Stringss getPlyAppNetAddress(in string cust_typ, in string in_clnt_cde)
+               raises (com::mcip::orb::CoException);
+
+        // for query Clause info via Web
+
+     	 com::mcip::orb::Stringss getClauseList(in wstring in_insrnc_cde, in wstring in_clause_cde, in wstring in_clnt_cnm)
+               raises (com::mcip::orb::CoException);
+
+        // enter customer client code, policy apply form number and Apply time scale for query PolicyApp Proposal List
+
+     	 com::mcip::orb::Stringss getProposalList(in wstring user_id, in string plyapp_cde, in string app_from_tm, in string app_to_tm, in string cust_typ)
+               raises (com::mcip::orb::CoException);
+
+        // enter customer client code, Endorsement apply form number Or Policy Number and Apply time scale for query EDrApp Form List
+
+     	 com::mcip::orb::Stringss getEdrAppList(in wstring user_id, in string edrapp_cde, in string ply_no, in string app_from_tm, in string app_to_tm, in string cust_typ)
+               raises (com::mcip::orb::CoException);
+
+        // enter customer client code, Endorsement number Or Policy Number and Apply time scale for query EDR Policy List
+
+     	 com::mcip::orb::Stringss getEdrsmtList(in wstring user_id, in string edr_no, in string ply_no, in string app_from_tm, in string app_to_tm, in string cust_typ)
+               raises (com::mcip::orb::CoException);
+
+        // enter Endorsement Policy Number for query EDR Policy Information
+
+     	 com::mcip::orb::Stringss getEdrsmtInfo(in string edr_no)
+               raises (com::mcip::orb::CoException);
+
+        // enter Endorsement Apply Number for query(preview) EDR Application Form Information
+
+     	 com::mcip::orb::Stringss getPreEdrInfo(in string edr_app_no)
+               raises (com::mcip::orb::CoException);
+
+        // check Endorsement Apply Form Existing or not
+
+     	 boolean checkEdrApp(in string ply_no)
+               raises (com::mcip::orb::CoException);
+
+
+
+        };
+      };
+    };
+  };
+};
+
+
+
+
+
+
+
+
+
+
+
+

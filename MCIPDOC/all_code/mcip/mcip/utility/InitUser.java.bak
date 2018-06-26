@@ -1,0 +1,74 @@
+////////////////////////////////////////////////////////
+// Author£ºZhangJinQuan
+// Funciton: init system(web server application)
+// Create date£º2000/08/10
+// UPdate date£º2000/08/10
+////////////////////////////////////////////////////////
+
+package utility;
+
+
+import java.lang.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.util.*;
+import java.io.*;
+import java.net.*;
+import exceptions.*;
+
+public class InitUser 
+{
+
+	synchronized public void InitUser() 
+	{
+	}
+	public synchronized static boolean initAll() {
+		int i;
+		try {
+			//stop sessionthread
+			if (!SessionUserThread.isObjectExist()) 
+			{
+				SessionUserThread st = SessionUserThread.getSessionThread();
+				if (st.isObjectInit())
+					st.setWillstop(true);
+			}
+	
+			Thread.sleep(1000);
+	
+			SessionUser.setObjectExist(false);
+			SessionUserThread.setObjectExist(false);
+	
+			//initSession;
+			SessionUser sb = SessionUser.getSessionUser();
+			sb.initSb();
+			System.out.println("init sessionuser if not init");
+	
+			//initSessionThread if not init
+			SessionUserThread st = SessionUserThread.getSessionThread();
+			st.initSt();
+			System.out.println("init sessionthread if not init");
+
+			//initMessageReader if not init		
+			MessageReader mr = MessageReader.getInstance();	
+			System.out.println("init MessageReader if not init");                        
+			return true;
+		   }
+		   catch (Exception e) 
+		   {
+			return false;
+		   }
+	}
+	public static boolean isInit() 
+	{
+		if (SessionUser.isObjectExist()) 
+		{
+			SessionUser sessionuser = SessionUser.getSessionUser();
+			if (!sessionuser.isObjectInit())
+				return false;
+		}
+		 else
+			return false;
+		return true;
+	}
+
+}

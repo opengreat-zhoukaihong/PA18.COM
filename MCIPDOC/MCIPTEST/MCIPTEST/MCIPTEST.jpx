@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--JBuilder XML Project-->
+<project>
+  <property category="idl" name="Compiler" value="VisiBroker" />
+  <property category="jsp" name="userColors" value="255,200,0:255,255,192:192,192,192:192,192,192:192,192,192:192,192,192:192,192,192:192,192,192:" />
+  <property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.JspRunner" />
+  <property category="runtime.0" name="appserver.ejbJarsSaved" value="1" />
+  <property category="runtime.0" name="appserver.parameters" value="-jts -jns -jss -jdb" />
+  <property category="runtime.0" name="appserver.servername" value="ejbcontainer" />
+  <property category="runtime.0" name="appserver.vmparameters" value="-Dvbroker.agent.port=14000 -Djava.library.path=C:/Borland/AppServer/lib;C:/Borland/AppServer/bin" />
+  <property category="runtime.0" name="jsprunner.jspfile" value="defaultroot/Jsp1.jsp" />
+  <property category="runtime.0" name="jsprunner.launchuri" value="/Jsp1.jsp" />
+  <property category="sys" name="AuthorLabel" value="@author" />
+  <property category="sys" name="BackupPath" value="bak" />
+  <property category="sys" name="CheckStable" value="1" />
+  <property category="sys" name="Company" value="" />
+  <property category="sys" name="CompanyLabel" value="Company:" />
+  <property category="sys" name="Copyright" value="Copyright (c) 2001" />
+  <property category="sys" name="CopyrightLabel" value="Copyright:" />
+  <property category="sys" name="Description" value="" />
+  <property category="sys" name="DescriptionLabel" value="Description:" />
+  <property category="sys" name="DocPath" value="doc" />
+  <property category="sys" name="ExcludeClassEnabled" value="0" />
+  <property category="sys" name="JDK" value="java 1.3.0_02" />
+  <property category="sys" name="LastTag" value="0" />
+  <property category="sys" name="Libraries" value="BAS 4.5;CORBA Express" />
+  <property category="sys" name="MakeStable" value="0" />
+  <property category="sys" name="OutPath" value="classes" />
+  <property category="sys" name="SourcePath" value="src;src/IDL" />
+  <property category="sys" name="Title" value="" />
+  <property category="sys" name="TitleLabel" value="Title:" />
+  <property category="sys" name="Version" value="1.0" />
+  <property category="sys" name="VersionLabel" value="@version" />
+  <property category="sys" name="WorkingDirectory" value="." />
+  <node type="WebContext" name="">
+    <property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.webapp.WarArchiver" />
+    <property category="archiving" name="buildWithProject" value="0" />
+    <property category="archiving" name="targetPath" value="MCIPTEST.war" />
+    <property category="webapp" name="docroot" value="defaultroot" />
+  </node>
+  <file path="src/IDL/businessInfoStruct.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/bus/orb/OperatorInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/bus/orb/OperatorInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.10" value="com/mcip/bus/orb/OprAuthInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.11" value="com/mcip/bus/orb/OprAuthInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.12" value="com/mcip/bus/orb/OprDptInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.13" value="com/mcip/bus/orb/OprDptInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.14" value="com/mcip/bus/orb/OprDptInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.15" value="com/mcip/bus/orb/CustFaqInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.16" value="com/mcip/bus/orb/CustFaqInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.17" value="com/mcip/bus/orb/CustFaqInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.18" value="com/mcip/bus/orb/InsrncFaqInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.19" value="com/mcip/bus/orb/InsrncFaqInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/bus/orb/OperatorInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.20" value="com/mcip/bus/orb/InsrncFaqInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.21" value="com/mcip/bus/orb/InsrncGuideInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.22" value="com/mcip/bus/orb/InsrncGuideInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.23" value="com/mcip/bus/orb/InsrncGuideInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.24" value="com/mcip/bus/orb/ClmDgstInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.25" value="com/mcip/bus/orb/ClmDgstInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.26" value="com/mcip/bus/orb/ClmDgstInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/bus/orb/SysFuncInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="com/mcip/bus/orb/SysFuncInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="com/mcip/bus/orb/SysFuncInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="com/mcip/bus/orb/PagesInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.7" value="com/mcip/bus/orb/PagesInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.8" value="com/mcip/bus/orb/PagesInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.9" value="com/mcip/bus/orb/OprAuthInfoHelper.java" />
+  </file>
+  <file path="src/IDL/businessManage.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/bus/orb/BusinessManagerHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/bus/orb/BusinessManagerHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/bus/orb/BusinessManager.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/bus/orb/BusinessManagerOperations.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="com/mcip/bus/orb/BusinessManagerPOA.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="com/mcip/bus/orb/BusinessManagerPOATie.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="com/mcip/bus/orb/_BusinessManagerStub.java" />
+  </file>
+  <file path="src/IDL/CorbaDataType.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/orb/StringsHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/orb/StringsHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/orb/StringssHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/orb/StringssHolder.java" />
+  </file>
+  <file path="src/IDL/custInfoStruct.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/cus/orb/CustOrgnHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/cus/orb/CustOrgnHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/cus/orb/CustOrgn.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/cus/orb/CustPrsnHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="com/mcip/cus/orb/CustPrsnHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="com/mcip/cus/orb/CustPrsn.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="com/mcip/cus/orb/CustEntityHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.7" value="com/mcip/cus/orb/CustEntityHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.8" value="com/mcip/cus/orb/CustEntity.java" />
+  </file>
+  <file path="src/IDL/custManage.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/cus/orb/CustManagerHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/cus/orb/CustManagerHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/cus/orb/CustManager.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/cus/orb/CustManagerOperations.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="com/mcip/cus/orb/CustManagerPOA.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="com/mcip/cus/orb/CustManagerPOATie.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="com/mcip/cus/orb/_CustManagerStub.java" />
+  </file>
+  <file path="src/IDL/exceptions.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/orb/CoExceptionHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/orb/CoExceptionHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/orb/CoException.java" />
+  </file>
+  <file path="src/IDL/getStaticInfo.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/cdt/orb/staticInfoManagerHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/cdt/orb/staticInfoManagerHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/cdt/orb/staticInfoManager.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/cdt/orb/staticInfoManagerOperations.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="com/mcip/cdt/orb/staticInfoManagerPOA.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="com/mcip/cdt/orb/staticInfoManagerPOATie.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="com/mcip/cdt/orb/_staticInfoManagerStub.java" />
+  </file>
+  <file path="defaultroot/Jsp1.jsp" />
+  <file path="src/mciptest/Jsp1Bean.java" />
+  <file path="src/IDL/MailDaemon.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/mail/orb/MailHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/mail/orb/MailHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/mail/orb/Mail.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/mail/orb/EmailManagerHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="com/mcip/mail/orb/EmailManagerHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="com/mcip/mail/orb/EmailManager.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="com/mcip/mail/orb/EmailManagerOperations.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.7" value="com/mcip/mail/orb/EmailManagerPOA.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.8" value="com/mcip/mail/orb/EmailManagerPOATie.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.9" value="com/mcip/mail/orb/_EmailManagerStub.java" />
+  </file>
+  <file path="MCIPTEST.html" />
+  <file path="src/IDL/paymentInfoStruct.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/pay/orb/PaymentLogHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/pay/orb/PaymentLogHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/pay/orb/PaymentLog.java" />
+  </file>
+  <file path="src/IDL/paymentManage.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/pay/orb/PaymentManagerHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/pay/orb/PaymentManagerHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/pay/orb/PaymentManager.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/pay/orb/PaymentManagerOperations.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="com/mcip/pay/orb/PaymentManagerPOA.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="com/mcip/pay/orb/PaymentManagerPOATie.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="com/mcip/pay/orb/_PaymentManagerStub.java" />
+  </file>
+  <file path="src/IDL/policyAppManage.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/nia/orb/PolicyAppManagerHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/nia/orb/PolicyAppManagerHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/nia/orb/PolicyAppManager.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/nia/orb/PolicyAppManagerOperations.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="com/mcip/nia/orb/PolicyAppManagerPOA.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="com/mcip/nia/orb/PolicyAppManagerPOATie.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="com/mcip/nia/orb/_PolicyAppManagerStub.java" />
+  </file>
+  <file path="src/IDL/policyInfoManage.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/nia/orb/PolicyInfoManagerHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/nia/orb/PolicyInfoManagerHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/nia/orb/PolicyInfoManager.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/nia/orb/PolicyInfoManagerOperations.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="com/mcip/nia/orb/PolicyInfoManagerPOA.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="com/mcip/nia/orb/PolicyInfoManagerPOATie.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="com/mcip/nia/orb/_PolicyInfoManagerStub.java" />
+  </file>
+  <file path="src/IDL/policyInfoStruct.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/nia/orb/AgncCntrListHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/nia/orb/AgncCntrListHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.10" value="com/mcip/nia/orb/OpenCoverInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.11" value="com/mcip/nia/orb/OpenCoverInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.12" value="com/mcip/nia/orb/PlcyAppListHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.13" value="com/mcip/nia/orb/PlcyAppListHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.14" value="com/mcip/nia/orb/PlcyAppList.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.15" value="com/mcip/nia/orb/PlcyAppInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.16" value="com/mcip/nia/orb/PlcyAppInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.17" value="com/mcip/nia/orb/PlcyAppInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.18" value="com/mcip/nia/orb/PrpslInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.19" value="com/mcip/nia/orb/PrpslInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/nia/orb/AgncCntrList.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.20" value="com/mcip/nia/orb/PrpslInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.21" value="com/mcip/nia/orb/NiaGridPackHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.22" value="com/mcip/nia/orb/NiaGridPackHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.23" value="com/mcip/nia/orb/NiaGridPack.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.24" value="com/mcip/nia/orb/CaseRptInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.25" value="com/mcip/nia/orb/CaseRptInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.26" value="com/mcip/nia/orb/CaseRptInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.27" value="com/mcip/nia/orb/QuotaCndtnHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.28" value="com/mcip/nia/orb/QuotaCndtnHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.29" value="com/mcip/nia/orb/QuotaCndtn.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/nia/orb/AgncCntrInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.30" value="com/mcip/nia/orb/PlyGetDocInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.31" value="com/mcip/nia/orb/PlyGetDocInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.32" value="com/mcip/nia/orb/PlyGetDocInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.33" value="com/mcip/nia/orb/PlyEdrAppInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.34" value="com/mcip/nia/orb/PlyEdrAppInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.35" value="com/mcip/nia/orb/PlyEdrAppInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.36" value="com/mcip/nia/orb/PlyEdrAppCrgoInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.37" value="com/mcip/nia/orb/PlyEdrAppCrgoInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.38" value="com/mcip/nia/orb/PlyEdrAppCrgoInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.39" value="com/mcip/nia/orb/PlyEdrAppPayInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="com/mcip/nia/orb/AgncCntrInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.40" value="com/mcip/nia/orb/PlyEdrAppPayInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.41" value="com/mcip/nia/orb/PlyEdrAppPayInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.42" value="com/mcip/nia/orb/PlyPlyAppNetInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.43" value="com/mcip/nia/orb/PlyPlyAppNetInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.44" value="com/mcip/nia/orb/PlyPlyAppNetInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.45" value="com/mcip/nia/orb/PlyEdrAppRdrInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.46" value="com/mcip/nia/orb/PlyEdrAppRdrInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.47" value="com/mcip/nia/orb/PlyEdrAppRdrInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.48" value="com/mcip/nia/orb/PlyEdrGridInfoHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.49" value="com/mcip/nia/orb/PlyEdrGridInfoHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="com/mcip/nia/orb/AgncCntrInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.50" value="com/mcip/nia/orb/PlyEdrGridInfo.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="com/mcip/nia/orb/OpenCoverListHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.7" value="com/mcip/nia/orb/OpenCoverListHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.8" value="com/mcip/nia/orb/OpenCoverList.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.9" value="com/mcip/nia/orb/OpenCoverInfoHelper.java" />
+  </file>
+  <file path="src/IDL/policyManage.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/nia/orb/PolicyManagerHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/nia/orb/PolicyManagerHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/nia/orb/PolicyManager.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/nia/orb/PolicyManagerOperations.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="com/mcip/nia/orb/PolicyManagerPOA.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="com/mcip/nia/orb/PolicyManagerPOATie.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="com/mcip/nia/orb/_PolicyManagerStub.java" />
+  </file>
+  <file path="src/IDL/userManage.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="com/mcip/bus/orb/UserManagerHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="com/mcip/bus/orb/UserManagerHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="com/mcip/bus/orb/UserManager.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="com/mcip/bus/orb/UserManagerOperations.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="com/mcip/bus/orb/UserManagerPOA.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="com/mcip/bus/orb/UserManagerPOATie.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="com/mcip/bus/orb/_UserManagerStub.java" />
+  </file>
+</project>
+

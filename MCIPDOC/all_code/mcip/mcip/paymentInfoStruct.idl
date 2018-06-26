@@ -1,0 +1,36 @@
+module com
+{
+  module mcip
+  {
+    module pay
+    {
+      module orb
+      {
+        struct PaymentLog // Payment Log information
+        {
+	string c_trans_id;      //transaction id or session id
+	string c_bank_cde;      //bank code
+	wstring c_bank_cnm;     //bank chinese name
+	wstring c_bank_accnt;   //the customer's account number in bank
+	double n_got_prm;       //customer's premium
+	wstring c_cur_typ;      //the currency type code of the premium
+	wstring c_cur_sbl;      //the currency abstract name
+	wstring c_cur_cnm;      //the currency chinese name
+	string t_pay_tm;        //the payment time --- 'YYYY-MM-DD hh24:mi:ss' length = 19
+	wstring c_pay_typ;      //the payment type
+	wstring c_pay_cde;      //the payment code
+	wstring c_order_no;     //the policy number or order number
+	string t_order_tm;      //the policy form underwriting time --- 'YYYY-MM-DD hh24:mi:ss' length = 19
+	wstring c_type_id;      //type id
+	wstring c_payment_id;   //the payment number from bank
+	wstring c_pay_seq_no;   //the payment sequence number from bank
+	wstring c_status_id;    //the payment transaction status flag
+  wstring c_user_id;      //the login user name or customer name
+      };
+
+     };
+    };
+  };
+};
+
+

@@ -1,0 +1,699 @@
+#include "CorbaDataType.idl"
+#include "exceptions.idl"
+
+module com
+{
+  module mcip
+  {
+    module nia
+    {
+      module orb
+      {
+
+       /*This Structure defination for holding the List of Agency Contract */
+      struct AgncCntrList        //agency contract list
+      {
+  string c_agt_agr_no;             //agency agreement number
+  long n_sub_co_no;                //sub agency agreement number
+  string c_insrnc_cde;             //insurance type code
+  wstring c_insrnc_cnm;             //insurance type code chinese name
+  string c_crgo_cde;               //cargo type code
+  wstring c_crgo_cnm;               //cargo type code chinese name
+      };
+
+       /*This Structure defination for holding the information of Agency Contract */
+      struct AgncCntrInfo        //agency contract information
+      {
+  string c_agt_agr_no;             //agency agreement number
+  long n_sub_co_no;                //sub agency agreement number
+  string c_auth_mrk;               //authorization mark
+  string c_co_mrk;                 //contract mark
+  string c_per_org_mrk;            //individual person or organization mark
+  string c_udr_mrk;                //underwrite mark
+  string c_clnt_cde;               //customer code
+  wstring c_clnt_nme;               //customer name
+  string c_dpt_cde;                //department code
+  string t_effc_tm;                //agreement effective date time, it will be transfered to date type
+  string t_co_strt_tm;             //contract start date time, it will be transfered to date type
+  string t_co_end_tm;              //contract end date time, it will be transfered to date type
+  string c_sls_cde;                //sales code
+  wstring c_co_cnt;                 //agreement contract content
+  wstring c_undr_prsn;              //underwrite person name
+// agency contract sub table information
+  string c_insrnc_cde;             //insurance type code
+  string c_crgo_cde;               //cargo type code
+  double n_rate;                   //premium rate
+  double n_nclm_prop;              //no claim prop
+  double n_appnt_prop;             //appointment prop
+  double n_cmm_prop;               //charge fee prop
+  double n_min_prm_prop;           //minimue premium prop
+  double n_max_amt_prop;           //maximue insurance amount prop
+      };
+
+       /*This Structure defination for holding the information of Open Cover Contract */
+      struct OpenCoverList           //Open Cover contract list
+      {
+  string c_open_cover_no;            //open cover contract number
+  wstring c_crgo_name;                //open cover cargo name
+  string c_insrnc_cde;               //insurance code
+  wstring c_insrnc_cnm;               //insurance chinese name
+  string c_frm_prt_ara;              //from port area code
+  wstring c_frm_prt_ara_cnm;          //from port area chinese name
+  string c_to_prt_ara;               //to port area code
+  wstring c_to_prt_ara_cnm;           //to port area chinese name
+  wstring c_from_prt;                 //from port
+  wstring c_to_prt;                    //to port
+      };
+
+       /*This Structure defination for holding the information of Open Cover Contract */
+      struct OpenCoverInfo           //Open Cover contract information
+      {
+  string c_open_cover_no;          //open cover contract number
+  string c_auth_mrk;               //authorization mark, default as N
+  string c_udr_mrk;                //underwrite mark
+  string c_dpt_cde;                //department code
+  string t_effc_tm;                //agreement effective date time, it will be transfered to date type
+  string t_co_strt_tm;             //contract start date time, it will be transfered to date type
+  string t_co_end_tm;              //contract end date time, it will be transfered to date type
+  wstring c_undr_prsn;              //underwrite person name
+  string c_insrnc_cde;             //insurance type code
+  string c_sls_cde;                //sales code
+  double n_rate;                   //premium rate
+  string c_insrnt_cde;             //insurant code
+  wstring c_insrnt_nme;             //insurant name
+  string c_app_cde;                //applicant code
+  wstring c_app_nme;                //applicant name
+  wstring c_crt_prsn;               //the person that enter this policy apply form
+  string t_undr_tm;                //the underwriting time
+  string c_ara_cde;                //the area of policy form deliveryed address
+  wstring c_province;                //the province of policy form deliveryed address
+  wstring c_city;                   //the city of policy form deliveryed address
+  wstring c_place;                  //the detailed place of policy form deliveryed address
+  wstring c_contact_name;           //the man that can be contacted when policy form deliveryed address
+  string c_contact_phone;          //the telephone that can be contacted when policy form deliveryed address
+  string c_contact_fax;            //the fax that can be contacted when policy form deliveryed address
+  wstring c_contact_email;          //the e_mail that can be contacted when policy form deliveryed address
+  string c_need_ply_no;            //the mark for needing policy form or not
+  string c_need_change;            //the mark for needing to change policy condition
+  wstring c_undr_cndtn;             //underwrite policy condition description
+  wstring c_no_repay_desc;          //no repay description
+  string n_busi_amt;               //the business amount of whole year
+  string c_busi_cur;               //the currency of business amount
+  wstring c_bus_feather;            //the feather of business
+  string c_srvy_cde;               //survey agency code
+  wstring c_srvy_cnm;               //survey chinese name
+  wstring c_pay_addr;               //payment address
+  string c_carriage_cde;           //carriage type code
+// Open Cover contract sub table (flight) information
+  wstring c_from_prt;               //the original port of the flight
+  wstring c_to_prt;                 //the destination port of the flight
+  string c_frm_prt_ara;            //the area type code of the original port
+  string c_to_prt_ara;             //the area type code of the destination port
+  wstring c_pass_prt;               //the via port
+// Open Cover contract sub table (cargo) information
+  string c_crgo_cls;               //the cargo class
+  string c_crgo_cde;               //the cargo type code
+  wstring c_crgo_name;              //the cargo name
+  string c_amount;                 //the quantity and unit of cargo
+  string c_pack_cde;               //the package type code
+  wstring c_pack_cnm;               //the package chinese name
+  wstring c_mark;                   //the mark of cargo
+      };
+
+      /* This Structure defination for holding the List of PolicyApp */
+      struct PlcyAppList        //policyapp form or delivery form List
+      {
+  string c_ply_app_no;          //policyapp number
+	string c_ply_no;              //policy number
+	string c_insrnc_cde;          //insurance code
+  wstring c_insrnc_cnm;         //insurance type code chinese name
+	double n_amt;                 //policy premium
+	string c_amt_cur;             //policy premium currency unit
+  string c_crgo_cde;            //cargo type code
+  wstring c_cdgo_desc;          //cargo description
+  string c_frm_prt_ara;         //from port area code
+  wstring c_frm_prt_ara_cnm;    //from port area chinese name
+  wstring c_from_prt;           //from port
+  string c_to_prt_ara;          //to port area
+  wstring c_to_prt_ara_cnm;     //to port area chinese name
+  wstring c_to_prt;             //to port
+  string c_carriage_cde;        //carriage type code
+  wstring c_carriage_cnm;       //carriage chinese name
+        };
+
+      /*This Structure defination for holding the information of PolicyApp */
+	  /*2001-09-09 by kangjin
+		purpose: add a new field:c_mdfy_tm
+	  */
+      struct PlcyAppInfo        //policyapp form or delivery form information
+      {
+	string c_ply_app_no;             //policy apply number
+	string c_ply_no;                 //policy number
+  string c_orig_ply_no;            //original policy number
+  string c_dpt_cde;                //department code
+  string c_bsns_typ;               //business type default as 1
+  string c_cmpny_agt_cde;          //company agent code
+  wstring c_cmpny_agt_nme;          //company agent name
+  string c_agt_agr_no;             //agent agreement(contract) number
+  long n_sub_co_no;                //sub contract number
+  string c_brkr_cde;               //broker code
+  wstring c_brkr_nme;               //broker name
+  string c_sls_cde;                //sales code
+  wstring c_sls_nme;                //sales name
+  string c_insrnc_cmpny_cde;       //insurance company code
+  wstring c_insrnc_cmpny_nme;       //insurance company name
+  string c_insrnt_cde;             //insuranced customer code
+  wstring c_insrnt_nme;             //insuranced customer name
+  wstring c_insrnt_addr;            //insuranced customer address
+  string c_bnfc_cde;               //beneficiary code
+  wstring c_bnfc_nme;               //beneficiary name
+  string c_app_cde;                //applicant code
+  wstring c_app_nme;                //applicant name
+  wstring c_app_addr;               //applicant address
+  string c_app_tel;                //applicant telephone
+  string c_insrnc_cde;             //insurance code
+  string c_claus_cde;              //clause code
+  string t_app_tm;                 //policy apply date time, it will be transfered to date type
+  string t_insrnc_bgn_tm;          //policy effective begining date time, it will be transfered to date type
+  string t_insrnc_end_tm;          //policy expire end date time, it will be transfered to date type
+  string t_sign_tm;                //sign time, it will be transfered to date type
+  string c_amt_cur;                //insurance value currency type
+  double n_insrnc_vlu;             //insurance value
+  double n_amt;                    //insurance amount
+  double n_rate;                   //currency rate
+  double n_prm;                    //policy premium
+  double n_rdr_prm;                //additional policy premium
+  double n_sum_prm;                //policy premium summary
+  string c_prm_cur;                //policy premium currency type
+  double n_nclm_prop;              //no claim amount percentage
+  double n_appnt_prop;             //appointment percentage
+  double n_cmm_prop;               //charge percentage
+  double n_brk_prop;               //broker percentage
+  long n_pay_tms;                  //pay terms
+  wstring c_appnt;                  //appointment
+  wstring c_remark;                 //remark
+  wstring c_crt_prsn;               //create person name
+  wstring c_undr_prsn;              //underwrite person name
+  string t_undr_tm;                //underwrite time, it will be transfered to date type
+  string c_rinsrnc_mrk;            //re-insurance mark
+  string c_coinsrnc_mrk;           //co-insurance mark
+  string t_input_tm;               //input time, it will be transfered to date type
+  wstring c_undr_dpt;               //underwrite department
+  string c_opr_typ;                //operation type -- distribute policy paper type
+  string c_edr_prj_no;             //endorsement project number
+  string t_next_edr_undr_tm;       //next endorse underwrite time, it will be transfered to date type
+  string c_udr_mrk;                //underwrite mark
+  string c_agelong_mrk;            //long time policy mark
+  string c_ceprn_mrk;              //chinese-english print mark
+  string c_salegrp_cde;            //sale group code
+  string c_open_cover_no;          //open cover contract number
+  string c_internet_typ;           //internet business type
+//cargo detailed description, target table of db keep these information
+  string c_crgo_cde;               //cargo type code
+  wstring c_crgo_desc;              //cargo description
+  wstring c_invc_no;                //invoice number
+  wstring c_sail_no;                //sail number
+  wstring c_prn_frm;                //print format form
+  wstring c_carriage_cde;           //carriage type code
+  wstring c_vsl_lvl_cde;            //ship level code
+  wstring c_from_prt;               //from port
+  wstring c_to_prt;                 //to port
+  string c_frm_prt_ara;            //from port area code
+  string c_to_prt_ara;             //to port area code
+  wstring c_pass_prt;               //pass port
+  string c_srvy_cde;               //survey agency code
+  wstring c_srvy_cnm;               //survey agency name
+  wstring c_undr_cndtn;             //underwrite condition
+  wstring c_pay_addr;               //payment address
+  wstring c_receipt_no;             //receipt number
+  string c_crgo_cls;               //cargo classify type
+  wstring c_crgo_name;              //cargo name
+  wstring c_amount;                 //cargp quantity and unit
+  wstring c_pack_cde;               //packegt type code
+  wstring c_pack_cnm;               //packegt chinese name
+  wstring c_mark;                   //cargo mark
+  double n_invc_amt;               //invoice amount
+  wstring c_invc_amt_cur;           //invoice amount currency type
+  wstring c_no_repay;               //no repay
+  string c_credit_id;              //credit payment id
+  wstring c_lost_desc;              //lost description before
+  wstring c_container;              //container mark
+  wstring c_add_risk;               //additional risk
+// the information of no credit letter paymnet
+  string c_main_insurance;         //main insurance type
+  string c_add_insurance;          //additional insurance type
+  string c_rdr_cde;                //redemption repay code
+  wstring c_rdr_nme;                //redemption repay name
+  wstring c_rmk_desc;               //description or remark
+// the information for deliverying policy form
+  string c_province;                 // province of deliverying address
+  string c_city;                    // city of deliverying address
+  wstring c_place;                   // detailed deliverying address
+  wstring c_contact_name;           // the person name that can be contacted
+  string c_contact_phone;           // the phone number that can be contacted
+  string c_contact_fax;             // the fax number that can be contacted
+  wstring c_contact_email;           // the email address that can be contacted
+// the information for payment mode
+  string c_pay_mde_cde;             // the payment mode code
+// added by YiJF Oct-12-2000
+// the site code of external internet web site
+  wstring c_site_cde;             // the site code of insternet web site
+// added by YiJF April-05-2001
+// the zip code of contacted address
+  wstring c_zip_cde;             // the zip code of contacted address
+// added by yijf May-10-2001
+// the survey address of underwriting
+  wstring c_srvy_addr;             // the survey address of underwriting
+  wstring c_edr_info;             // the endorsement information
+  string c_mdfy_tm;              // the policy modified time
+      };
+
+      /*This Structure defination for holding the information of Proposal */
+      struct PrpslInfo        //proposal information
+      {
+  string c_doc_no;                  //document record number
+  double n_rate;                    //policy premium rate
+  wstring c_no_repay;                //complain(no replay) description
+  wstring c_undr_cndtn;              //underwrite condition
+  string t_send_tm;                 //the time of send policy form, it will be transfered to date type
+  wstring c_send_desc;               //the description of send policy form
+  wstring c_undr_prsn;               //underwrite person name
+  string t_sign_tm;                 //the time of sign policy, it will be transfered to date type
+  string c_user_id;               //customer or user id
+  wstring c_remark;                  //case remark
+  wstring c_user_remark;             //user remark or advice
+      };
+
+      /*This Structure defination for holding the information of Proposal confirm packet
+        or Policy Application Form withdrawaling packet */
+      struct NiaGridPack        //packet information for cyber insurance apply
+      {
+  string c_docno;                  //document record number: c_ply_app_no
+  string t_sendtm;                 //document send time
+  string c_blgdptcde;              //department code: c_dpt_cde
+  string c_source;                  //default as '0'
+  string c_senddptcde;              //send department code: net_id
+  string c_sendcde;                 //send code
+  string c_desdptcde;               //destination department code
+  string c_emergency;               //emergency status
+  string c_authprncde;              //authentication person code
+  string c_udrmrk;                  //underwrite mark, default as '1'
+  string c_sendmrk;                 //send mark, default as '0'
+  string c_udropnmrk;               //underwrite opinion mark
+  long n_vrfymrk;                   //verify mark
+  string t_mdfytm;                  //modify time
+  string c_Insrnccde;               //insusrance code: c_insrnc_cde
+  wstring c_undrprsn;               //upderwrite person: c_undr_prsn
+  wstring c_undrdpt;                //underwrite department: c_undr_dpt
+  string c_prntyp;                  //document print type, default as '5'
+  string c_rinsrncmrk;              //re-insurance mark
+  string c_coinsrncmrk;             //co-insurance mark
+  string c_plyno;                   //policy number
+  string c_edrno;                   //endorsing policy number
+  string c_read;                    //mark for reading processe
+  string c_flag;                    //submit flag
+  wstring c_insrntnme;              //insurant name
+  wstring c_insrnccnm;              //insurance name
+  wstring c_blgdptcnm;              //belong department chinese name
+  wstring c_senddptcnm;             //send department chinese name
+  wstring c_desdptcnm;              //destination department chinese name
+  wstring c_undrdptcnm;             //underwriting department chinese name
+  string t_signtm;                  //sign time : t_sign_tm
+  wstring c_rptdesc;                //report description
+  string c_edrtyp;                  //endorse type
+  string c_risklvlcde;              //risk level code
+  string c_lcnno;                   //license number
+  string c_engno;                   //engine number
+  string c_insrnccls;               //insurance class
+  string c_useatr;                  //usage attribute
+  string c_apptyp;                  //policy apply type
+  string t_apptm;                   //policy apply time:t_app_tm
+  string t_inputtm;                 //input time: t_input_tm
+  wstring c_appnme;                 //policy applicant name:c_app_nme
+  wstring c_undropn;                //underwriting opinion
+  string c_edrapptm;                //endorse apply time
+  string c_internet_typ;             //internet business type mark, default as '2'
+      };
+
+      /*This Structure defination for holding the information of Case Report Form */
+      struct CaseRptInfo        //Case report information for cyber insurance
+      {
+  string c_ply_no;        /* 保单号 */
+  string c_rpt_no;        /* 报案号 */
+  string c_clm_no;        /* 赔案号*/
+  wstring c_insrnt_nme;    /* 被保险人名称*/
+  string c_insrnt_cde;    /* 被保险人代码*/
+  wstring c_insrnc_tgt;    /* 保险标的 */
+  wstring c_rpt_nme;       /* 报案人姓名 */
+  string c_srs_case_mrk;  /* 重大赔案标志*/
+  wstring c_rpt_addr_tel;  /* 报案人地址电话 */
+  string t_rtp_tm;        /* 报案时间 */
+  string t_accdnt_tm;     /* 出险时间 */
+  wstring c_accdnt_spot;   /* 出险地点*/
+  wstring c_accdnt_caus;   /* 出险原因 */
+  wstring c_los_dtl;       /* 损失情况*/
+  string c_cur_typ;       /* 报损币种*/
+  double n_rpt_amt;       /* 报损金额*/
+  string c_insrnc_cde;    /* 险种*/
+  string c_rcvr_cde;      /* 受理人姓名*/
+  wstring c_opinion;       /* 处理意见*/
+  wstring c_remark;        /* 备注*/
+  wstring c_tgt_los_dtl;   /* 标的损失情况 */
+  wstring c_hlp_exp;       /* 施救情况及费用*/
+  wstring c_thd_los;       /* 第三者损失情况*/
+  wstring c_clm_prcs_dtl;  /* 赔案处理情况*/
+  wstring c_srs_case_opinion;  /* 重大赔案处理意见 */
+  string c_dpt_cde;       /* 承保机构*/
+  string t_rpt_mdfy_tm;   /* 报案修改日期 this field is more than Table t_clmrpt*/
+  string c_prcs_dpt_cde;      /*受理机构*/
+  string c_rpt_rgst_cde;      /*报案登记人*/
+  string t_insrnc_bgn_tm;     /*保险起期*/
+  string t_insrnc_end_tm;     /*保险止期*/
+  double n_amt;               /*投保金额*/
+  string c_amt_cur;           /*保额币种*/
+  string c_car_no;            /*车辆序号*/
+  string c_lcn_no;            /*牌照号*/
+  string c_brnd_cde;          /*厂牌车型*/
+  string c_eng_no;            /*发动机号*/
+  wstring c_accdnt_dtl;        /*出险经过*/
+  string c_rpt_prcs_mrk;      /*’0’-受理,’1’-不受理,’2’-暂缓受理*/
+  wstring c_brnd_cnm;          /*厂牌车型名称*/
+  string c_internet_typ;      /*网上业务标志*/
+  string c_prt_dcn_no;
+  string c_srvy_mrk;
+  string c_agencysrvy_mrk;
+  string c_insrnc_cls;
+  string t_rpt_rgst_tm;
+  string c_clm_rgst_mrk;
+      };
+
+      /*This Structure defination for holding the querying condition of Quotation Table "t_crgo_rate" */
+      struct QuotaCndtn        //querying condition for cyber insurance quotation
+      {
+  string c_dpt_cde;            //department code
+  string c_insrnc_cde;         //insurance type code
+  string c_rdr_cde;            //insurance rdr code
+  string c_crgo_cls;           //cargo class type
+  string c_crgo_cde;           //cargo type code
+  string c_pack_cde;           //cargo pack type code
+  string c_carriage_cde;       //cargo carriage type code
+  string c_frm_prt_ara;        //the From port area
+  string c_to_prt_ara;         //the To port area
+  string n_rate;               //the premium rate
+  wstring c_nclm_desc;         //the NO Claim Deacription
+      };
+
+
+      /*This Structure defination for holding the information of Policy for endorsement*/
+      struct PlyGetDocInfo        //Policy information for endorse
+      {
+	wstring c_doc_no;                // policy number
+	string c_insrnc_cde;             // insurrance code
+	string c_prn_typ;                // document print type, default as '1'
+  wstring t_undr_tm;               // the time of policy underwriting
+      };
+
+
+      /*This Structure defination for holding the information of Policy endorsement apply */
+      struct PlyEdrAppInfo        //Policy endorsement apply form information
+      {
+  wstring c_crt_cde;              /*创建人员*/
+  wstring c_crt_tm;               /*创建时间*/
+  wstring c_upd_cde;              /*修改人员*/
+  wstring c_upd_tm;               /*修改时间*/
+  wstring c_edr_app_no;           /*申请单号*/
+  wstring c_edr_no;               /*批单号*/
+  wstring c_ply_no;               /*保单号*/
+  wstring c_edr_typ;              /*批改类型*/
+  wstring c_app_prsn_no;          /*申请人编码*/
+  wstring c_app_prsn_nme;         /*申请人名称*/
+  wstring c_app_prsn_addr;        /*申请人地址*/
+  wstring c_app_prsn_tel;         /*申请人电话*/
+  wstring t_edr_app_tm;           /*申请日期*/
+  wstring c_edr_rsn;              /*批改原因*/
+  wstring c_edr_ctnt;             /*批改内容*/
+  wstring n_amt_var;              /*保鹅变化*/
+  wstring n_prm_var;              /*保肥变化*/
+  wstring n_nclm_amt;             /*无赔退费*/
+  wstring n_appnt_amt;            /*约定退费*/
+  wstring n_ndis_amt;             /*最新约定退费*/
+  wstring n_nnclm_amt;            /*最新无赔退费*/
+  wstring c_orig_ply_no;          /*续保原保单号*/
+  wstring c_dpt_cde;              /*机构部门*/
+  wstring c_bsns_typ;             /*业务来源*/
+  wstring c_cmpny_agt_cde;        /*代理人编码*/
+  wstring n_sub_co_no;            /*补充协议号*/
+  wstring c_agt_agr_no;           /*代理协议号*/
+  wstring c_brkr_cde;             /*经纪人编码*/
+  wstring c_sls_cde;              /*业务员编码*/
+  wstring c_insrnc_cmpny_cde;     /*保险公司*/
+  wstring c_insrnt_cde;            /*被保险人编码*/
+  wstring c_insrnt_nme;            /*被保险人名称*/
+  wstring c_insrnt_addr;           /*被保险人地址*/
+  wstring c_bnfc_cde;              /*受益人编码*/
+  wstring c_bnfc_nme;              /*受益人名称*/
+  wstring c_app_cde;               /*投保人编码*/
+  wstring c_app_nme;               /*投保人名称*/
+  wstring c_app_addr;              /*投保人地址*/
+  wstring c_app_tel;               /*投保人电话*/
+  wstring c_insrnc_cde;            /*险种代码*/
+  wstring c_claus_cde;             /*主险条款*/
+  wstring t_app_tm;                /*投保日期*/
+  wstring t_insrnc_bgn_tm;         /*保险起期*/
+  wstring t_insrnc_end_tm;         /*保险止期*/
+  wstring t_sign_tm;               /*签单日期*/
+  wstring c_amt_cur;               /*保额币种*/
+  wstring n_insrnc_vlu;            /*保险价值*/
+  wstring n_amt;                   /*保险金额*/
+  wstring n_rate;                  /*费率*/
+  wstring n_prm;                   /*保费*/
+  wstring n_rdr_prm;               /*附加险保费*/
+  wstring n_sum_prm;               /*保费合计*/
+  wstring c_prm_cur;               /*应收保费币种*/
+  wstring n_nclm_prop;             /*无赔退费比例*/
+  wstring n_appnt_prop;            /*约定退费比例*/
+  wstring n_cmm_prop;              /*手续费比例*/
+  wstring n_brk_prop;              /*经纪费比例*/
+  wstring n_pay_tms;               /*缴费期数*/
+  wstring c_appnt;                 /*特别约定*/
+  wstring c_remark;                /*备注*/
+  wstring c_crt_prsn;              /*录入人*/
+  wstring c_undr_prsn;             /*核保人*/
+  wstring t_undr_tm;               /*核保日期*/
+  wstring c_rinsrnc_mrk;           /*分保类型*/
+  wstring c_coinsrnc_mrk;          /*共保标志*/
+  wstring t_input_tm;              /*录入日期*/
+  wstring c_undr_dpt;              /*核保机构*/
+  wstring c_opr_typ;               /*出单方式*/
+  wstring c_edr_prj_no;            /*序号*/
+  wstring t_next_edr_undr_tm;      /*下次批改核保日期*/
+  wstring c_dpt_cnm;               /*机构部门名称*/
+  wstring c_insrnc_cnm;            /*险种中文名称*/
+  wstring c_undr_prsn_cnm;         /*核保人名称*/
+  wstring c_undr_dpt_cnm;          /*核保机构名称*/
+  wstring c_crt_prsn_cnm;          /*录入人名称*/
+  wstring c_sls_nme;               /*业务员姓名*/
+  wstring c_cmpny_agt_nme;         /*代理人名称*/
+  wstring c_amt_cur_cnm;           /*保额币种名称*/
+  wstring c_agelong_mrk;           /*多年期标志*/
+  wstring c_ceprn_mrk;             /*中英文打印标志*/
+  wstring c_udr_mrk;               /*核保标志*/
+  wstring c_salegrp_cde;           /*销售团队代码*/
+  wstring n_got_prm;               /*实收保费*/
+  wstring c_sum_nclm;              /*无赔优待金额合计*/
+  wstring c_zip_cde;               /*邮政编码*/
+  wstring c_sttl;                  /*争议解决方式*/
+  wstring c_ratio;                 /*短期费率系数*/
+  wstring c_cntct_prsn_nme;         /*联系人*/
+  wstring c_app_typ;               /*投保分类*/
+  wstring c_query_mrk;             /* 查询标志*/
+  wstring c_fst_undr_prsn;         /*初核人编码*/
+  wstring c_fst_opn;               /*初核人意见*/
+  wstring c_chk_prsn;              /*验车人*/
+  wstring c_chk_rec;               /*验车记录*/
+  wstring c_chk_tm;                /*验车时间*/
+  wstring c_fst_undr_tm;           /*初核时间*/
+  wstring n_save_amt_var;          /*储金变化*/
+  wstring c_open_cover_no;         /*Open cover协议号*/
+  wstring c_internet_typ;          /*网上业务标志[0]='1'*/
+      };
+
+      /*This Structure defination for holding the cargo information of Policy endorsement apply */
+      struct PlyEdrAppCrgoInfo        //Policy endorsement apply form cargo information
+      {
+  wstring c_crt_cde;              /*创建人员*/
+  wstring c_crt_tm;               /*创建时间*/
+  wstring c_upd_cde;              /*修改人员*/
+  wstring c_upd_tm;               /*修改时间*/
+  wstring c_edr_app_no;           /*申请单号*/
+  wstring c_crgo_cde;             /*货物类型编码*/
+  wstring c_crgo_cnm;             /*货物名称*/
+  wstring c_crgo_desc;            /*货物描述*/
+  wstring c_invc_no;              /*发票提单号*/
+  wstring c_sail_no;              /*航次*/
+  wstring c_prn_frm;              /*起运日期打印格式*/
+  wstring c_carriage_cde;         /*运输方式*/
+  wstring c_vsl_lvl_cde;          /*船级编码*/
+  wstring c_from_prt;             /*起运港*/
+  wstring c_to_prt;               /*目的港*/
+  wstring c_frm_prt_ara;          /*起运港所在国家地区编码*/
+  wstring c_to_prt_ara;           /*目的港所在国家地区编码*/
+  wstring c_pass_prt;             /*途经港*/
+  wstring c_srvy_cde;             /*查勘代理人编码*/
+  wstring c_srvy_cnm;             /*查勘代理人名称*/
+  wstring c_undr_cndtn;           /*承保条件*/
+  wstring n_amt;                  /*保险金额*/
+  wstring n_rate;                 /*费率*/
+  wstring n_prm;                  /*保费*/
+  wstring c_pay_addr;             /*赔款偿付地点*/
+  wstring c_rec_no;               /*暂存记录号*/
+  wstring c_receipt_no;           /*提单号*/
+  wstring c_crgo_cls;             /*货物大类编码*/
+  wstring c_crgo_name;            /*品名描述 */
+  wstring c_amount;               /*数量+单位*/
+  wstring c_pack_cde;             /*包装方式代码*/
+  wstring c_mark;                 /*唛头*/
+  wstring n_invc_amt;             /*发票金额*/
+  wstring c_invc_amt_cur;         /*发票金额币种*/
+  wstring c_no_repay;             /*免赔*/
+  wstring c_credit_id;            /*信用证标识*/
+  wstring c_lost_desc;            /*以往赔付记录*/
+  wstring c_container;            /*集装箱*/
+  wstring c_add_risk;             /*其他附加风险*/
+  wstring c_pack_cnm;             /*包装方式名称*/
+// added by yijf May-10-2001
+// the survey address of underwriting
+  wstring c_srvy_addr;             // the survey address of underwriting
+  wstring c_edr_info;             // the endorsement information
+      };
+
+      /*This Structure defination for holding the payment information of Policy endorsement apply */
+      struct PlyEdrAppPayInfo        //Policy endorsement apply form payment information
+      {
+  wstring c_crt_cde;              /*创建人员*/
+  wstring c_crt_tm;               /*创建时间*/
+  wstring c_upd_cde;              /*修改人员*/
+  wstring c_upd_tm;               /*修改时间*/
+  wstring c_edr_app_no;           /*投保单号*/
+  wstring n_tms;                  /*缴费期别*/
+  wstring c_rcpt_no;              /*收据号*/
+  wstring c_pay_prsn_cde;         /*付款人编码*/
+  wstring c_pay_prsn_nme;         /*付款人姓名*/
+  wstring n_get_prm;              /*应收保费*/
+  wstring c_pay_mde_cde;          /*付款方式*/
+  wstring c_accnt_no;             /*银行帐号*/
+  wstring t_pay_lmt_tm;           /*缴费截止日期*/
+  wstring n_got_prm;              /*实收保费*/
+  wstring t_pay_strt_tm;          /*缴费起始日期*/
+  wstring t_pay_tm;               /*收费日期*/
+  wstring c_insrnc_cde;           /*险种*/
+  wstring c_cur_typ;              /*币种*/
+  wstring c_rec_no;               /*暂存记录号*/
+  wstring c_prn_typ;              /*单证类型*/
+      };
+
+      /*This Structure defination for holding the deliverying information of Policy endorsement apply */
+      struct PlyPlyAppNetInfo        //Policy endorsement apply form deliverying information
+      {
+  wstring c_crt_cde;              /*创建人员*/
+  wstring c_crt_tm;               /*创建时间*/
+  wstring c_upd_cde;              /*修改人员*/
+  wstring c_upd_tm;               /*修改时间*/
+  wstring c_ply_app_no;           /*投保单号*/
+  wstring n_user_seq_no;          /*客户登记流水号*/
+  wstring t_freeback_tm;          /*反馈日期*/
+  wstring t_print_tm;             /*打印日期*/
+  wstring c_province;             /*送单省、市*/
+  wstring c_city;                 /*送单县/市/区*/
+  wstring c_place;                /*送单详细位置*/
+  wstring c_contact_name;         /*联系人*/
+  wstring c_contact_phone;        /*联系电话*/
+  wstring c_contact_fax;          /*联系传真*/
+  wstring c_contact_email;        /*电邮地址*/
+  wstring c_site_cde;             /*网站编码*/
+  wstring c_rec_no;               /*暂存记录号*/
+  wstring c_send_flag;            /*发送标志*/
+// added by YiJF April-05-2001
+  wstring c_send_emp_cde;         /*送单员工号*/
+  wstring c_prt_emp_cde;          /*打印保单的员工号*/
+  wstring t_send_tm;              /*送单时间*/
+  wstring t_sended_tm;            /*送到时间*/
+  wstring c_zip_cde;              /*邮政编码*/
+  wstring c_pay_flag;             /*付费标志 上门收费网上付费*/
+  wstring c_session_id;           /*交易流水号*/
+  wstring c_bank_cde;             /*银行代码*/
+  wstring c_bank_cnm;             /*银行名称*/
+  wstring c_bank_accnt;           /*银行帐号*/
+  wstring n_got_prm;              /*实收保费*/
+  wstring c_cur_typ;              /*币种*/
+  wstring t_pay_tm;               /*缴费日期*/
+  wstring c_pay_typ;              /*缴费类型*/
+  wstring c_pay_cde;              /*付费代码*/
+      };
+
+      /*This Structure defination for holding the RDR information of Policy endorsement apply */
+      struct PlyEdrAppRdrInfo        //Policy endorsement apply form RDR information
+      {
+  com::mcip::orb::Stringss edrapprdr; // RDR info String Array [][]
+      };
+
+      /*This Structure defination for holding the Grid information of Policy endorsement apply */
+      struct PlyEdrGridInfo        //Policy endorsement apply form Grid information
+      {
+    wstring c_crt_cde;     /*创建人员*/
+    wstring c_crt_tm;      /*创建时间*/
+    wstring c_upd_cde;     /*修改人员*/
+    wstring c_upd_tm;      /*修改时间*/
+    wstring c_edr_app_no;  /*单据号*/
+    wstring c_send_tm;     /*发送时间*/
+    wstring c_dpt_cde;     /*所属机构*/
+    wstring c_source;      /*产生源[0]='0'*/
+    wstring c_send_dpt_cde;/*网站编码*/
+    wstring c_send_cde;    /*发送人*/
+    wstring c_des_dpt_cde; /*目标机构*/
+    wstring c_emergency;   /*紧急程度*/
+    wstring c_authprn_cde; /*授权人*/
+    wstring c_udr_mrk;     /*核保标志*/
+    wstring c_send_mrk;    /*发送标志*/
+    wstring c_udr_opn_mrk; /*核保意见标志*/
+    wstring c_vrfy_mrk;    /*审核标志*/
+    wstring c_mdfy_tm;     /*修改时间*/
+    wstring c_insrnc_cde;  /*险种*/
+    wstring c_undr_prsn;   /*核保人*/
+    wstring c_undr_dpt;    /*核保机构*/
+    wstring c_prn_typ;     /*单证类型[0]='5'*/
+    wstring c_rinsrnc_mrk; /*分保类型*/
+    wstring c_coinsrnc_mrk;/*共保标志*/
+    wstring c_ply_no;      /*保单号*/
+    wstring c_edr_no;      /*批单号*/
+    wstring c_read_tm;     /*读取时间， 用于并发控制*/
+    wstring c_rec_no;      /*暂存记录号*/
+//    wstring c_work_mrk;    /*工作栏标志	0-暂存,1-待修改，2-已申请核保*/
+    wstring c_flag;        /*提交处理标志=2*/
+    wstring c_insrnc_dfn_typ; /*(险种表)险种定义类别*/
+    wstring c_insrnc_cnm;   /*(险种表)险种中文名称*/
+    wstring c_edr_typ;      /*(申请单主档)批改类型*/
+    wstring c_app_nme;      /*(申请单主档)投保人名称*/
+    wstring n_amt;          /*(申请单主档)保险金额*/
+    wstring t_sign_tm;      /*签单日期*/
+    wstring c_rpt_desc;    /*上报说明*/
+    wstring c_risk_lvl_cde;/*风险等级代码*/
+    wstring c_lcn_no;      /*牌照号码*/
+    wstring c_eng_no;      /*发动机号*/
+    wstring c_insrnc_cls;  /*险种大类*/
+//    wstring c_app_typ;     /*投保分类*/
+    wstring c_use_atr;     /*使用性质*/
+    wstring c_undr_opn;    /*核保意见*/
+    wstring c_internet_typ;/*网上业务标志[0]='1'*/
+      };
+
+
+
+
+
+     };
+    };
+  };
+};
+
+

@@ -1,0 +1,1 @@
+cc -G -I/usr/java/include -I/usr/java/include/solaris -lsocket -lnsl lib_ucomm.a InterGateway.c -o /data1/pa18/lib/libintergatecom.so

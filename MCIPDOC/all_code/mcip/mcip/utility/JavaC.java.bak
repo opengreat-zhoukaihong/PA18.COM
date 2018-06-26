@@ -1,0 +1,134 @@
+package utility;
+
+import constant.*;
+import com.mcip.cus.orb.*;
+import java.lang.reflect.*;
+import java.awt.*;
+import java.io.*;
+import java.util.*;
+
+public class JavaC{
+	private Object inobj=null;
+  private Object referobj=null;
+  private Class inclass=null;
+  private Field[] infield=null;
+  private int inobjlen=0;
+  public String orderedstr=null;
+  public JavaC(){}
+  public JavaC(Object obj){
+		inobj=obj;
+  }
+    
+  public void init(){
+		inclass =inobj.getClass();
+		infield = inclass.getFields();
+		inobjlen=infield.length;
+		referobj=getReferOject(inobj);
+  }
+
+  public boolean findfield(String s, Object ob){
+		Object temp=ob;
+		Class cl=temp.getClass();
+		Field[] tmpfld=cl.getFields();
+		int templen=tmpfld.length;
+		for (int i=0;i<templen;i++){
+	    try{
+				String fieldname = tmpfld[i].getName();
+				if (fieldname.equals(s)) 	return true;
+	    }
+	    catch(Exception e){
+				e.printStackTrace();
+	    }
+		}
+	return false;
+  }
+
+  public String strlpad(String str1,int str_len,String str3){
+		int i=0;
+		int j=0;
+		String str2=new String(str3);
+		j=str1.length();
+		if (j>=str_len)
+	  	return str1;
+		else{
+	    for (i=0;i<(str_len-j-1);i++){
+				str2=str2.concat(str3);
+	    }
+	  	str2=str2.concat(str1);
+	  	return str2;
+		}
+	}
+    
+ 	public String buildCStyleString(Object robj){
+		String temp="";
+		Object pcis=robj;
+		Class nc=pcis.getClass();
+		Field[] nFields = nc.getFields();
+		String nfieldName=null;
+		int outlen=nFields.length;
+
+		temp=temp.concat("0005");
+		temp=temp.concat("13003");
+		temp=temp.concat("0000");
+		temp=temp.concat("0000");
+		temp=temp.concat("0001");
+		temp=temp.concat("1");
+		temp=temp.concat("0000");
+		temp=temp.concat("0000");
+		temp=temp.concat("0002");
+		temp=temp.concat("13");
+		temp=temp.concat("0000");
+		temp=temp.concat("0000");
+
+		for (int i=0;i<outlen;i++){
+			try{
+				nfieldName = nFields[i].getName();
+				if (findfield(nfieldName,inobj)){
+			    String v=(inclass.getField(nfieldName).get(inobj)).toString();
+			    byte[] byt=v.getBytes();
+			    int strlen=byt.length;
+			    if (v.equals(null) && strlen==4)
+						temp=temp.concat("0000");
+			    else{
+						temp=temp.concat(strlpad(String.valueOf(strlen),4,"0"));
+						temp=temp.concat(v);
+			    }
+				}
+				else{
+			    temp=temp.concat("0000");
+				}
+		  }
+		  catch(Exception e){
+				e.printStackTrace();
+		  }
+		}
+		return temp;
+	}
+
+	public Object getReferOject(Object inob){
+  	Class c = inob.getClass();
+  	String s=c.getName();
+  	cltPerClntInfoStru pcis;
+  	if(s.equals("java.lang.String")){
+			String st=new String();
+	  	return st;
+    }
+    else 
+	  	pcis=new cltPerClntInfoStru();
+	  return pcis;
+  }
+
+  public byte[] getByteArray(){
+	String retstr=buildCStyleString(referobj);
+	byte[] retbyte=null;
+	try{
+    retbyte=retstr.getBytes("GB2312");
+  }
+  catch (Exception e)
+  {
+		System.err.println("UnsupportedEncodingException"+ e);
+		return null;
+  }
+		return retbyte;
+  }
+}

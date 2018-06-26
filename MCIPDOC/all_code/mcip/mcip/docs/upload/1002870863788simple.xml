@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!--投保数据结构-->
+<!--说明
+1.并非每个字段都是必需的
+2.未能正确填写的字段不会产生错误,但无法被识别
+2.先后顺序没有关系
+3.多填字段不会导致错误,但太多的冗余字段会影响上传和处理的速度-->
+<PolicyApp>
+  <T_INSRNC_BGN_TM>2001-06-04</T_INSRNC_BGN_TM><!--启运时间-->
+  <C_AMT_CUR>01</C_AMT_CUR><!--保额币种-->
+  <N_AMT>500000</N_AMT><!--保费金额-->
+  <N_RATE>0.003</N_RATE><!--保险费率-->
+  <N_PRM>1500</N_PRM><!--保险费-->
+  <C_PRM_CUR>01</C_PRM_CUR><!--保费币种-->
+  <C_REMARK>sdfsdfsdafsdfsdfsdfsdfdsfdsfdsfsdfsdfsdfdsfsdfdsfsdfsdfsdfsdfsdfsdfsdfsdfsd sdfsdfsdfsdfdsfsdfsdfdsfsdfsdfdsfsdfsdfsdfsdfsdfdsfsd sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsfsdfsdfsdfsdfds dsfsdfdsfsdfdsfsdfsdfsdfsdfsdfsfsdfsdfsdfsd sdfsdfsdfsdfsdfsdfsdfsdfsdf</C_REMARK><!--备注-->
+  <C_CRGO_CDE>3202</C_CRGO_CDE><!--货物细类-->
+  <C_CRGO_DESC>大米麻袋 500吨 abc sdfsdfsdafsdfsdfsdfsdfdsfdsfdsfsdfsdfsdfdsfsdfdsfsdfsdfsdfsdfsdfsdfsdfsdfsd sdfsdfsdfsdfdsfsdfsdfdsfsdfsdfdsfsdfsdfsdfsdfsdfdsfsd sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsfsdfsdfsdfsdfds dsfsdfdsfsdfdsfsdfsdfsdfsdfsdfsfsdfsdfsdfsd sdfsdfsdfsdfsdfsdfsdfsdfsdf </C_CRGO_DESC><!--货物描述-->
+  <C_INVC_NO>发票56456fff</C_INVC_NO><!--发票号码-->
+  <C_SAIL_NO>船测试4</C_SAIL_NO><!--船名/车号/航班-->
+  <C_PRN_FRM>2001年06月04日</C_PRN_FRM><!--打印格式-->
+  <C_FROM_PRT>大连</C_FROM_PRT><!--启运港-->
+  <C_TO_PRT>深圳</C_TO_PRT><!--目的港-->
+  <C_FRM_PRT_ARA>1001</C_FRM_PRT_ARA><!--启运国家-->
+  <C_TO_PRT_ARA>1001</C_TO_PRT_ARA><!--目的国家-->
+  <C_PASS_PRT>广州</C_PASS_PRT><!--途径港-->
+  <C_UNDR_CNDTN>承保综合险，适用《国内水路、陆路货物运输保险条款》（1993年4月9日颁布，1995年2月20日修订）。附加《财产险2000年问题除外责任条款》</C_UNDR_CNDTN><!--承保条件-->
+  <C_PAY_ADDR>深圳</C_PAY_ADDR><!--赔款偿付地-->
+  <C_RECEIPT_NO>a556456ff</C_RECEIPT_NO><!--提单号-->
+  <C_CRGO_CLS>3200</C_CRGO_CLS><!--货物大类代码-->
+  <C_CRGO_NAME>大米</C_CRGO_NAME><!--货物名称-->
+  <C_AMOUNT>500吨</C_AMOUNT><!--货物数量-->
+  <C_PACK_CNM>麻袋</C_PACK_CNM><!--包装方式-->
+  <C_MARK>abc</C_MARK><!--唛头-->
+  <N_INVC_AMT>500000</N_INVC_AMT><!--发票金额-->
+  <C_INVC_AMT_CUR>01</C_INVC_AMT_CUR><!--发票币种-->
+  <C_NO_REPAY></C_NO_REPAY><!--免赔描述-->
+  <C_LOST_DESC></C_LOST_DESC><!--以往损失记录-->
+  <C_CONTAINER>集装箱整箱</C_CONTAINER><!--装箱方式-->
+  <C_ADD_RISK></C_ADD_RISK><!--其它附加险-->
+  <C_SRVY_ADDR>sdfasf</C_SRVY_ADDR><!--查勘地点-->
+  <C_PROVINCE>0400</C_PROVINCE><!--省份代码-->
+  <C_CITY>0501</C_CITY><!--城市代码-->
+  <C_PLACE>深圳市32432432</C_PLACE><!--地址-->
+  <C_CONTACT_NAME>32432</C_CONTACT_NAME><!--联系人-->
+  <C_CONTACT_PHONE>423432</C_CONTACT_PHONE><!--联系电话-->
+  <C_CONTACT_FAX>324324</C_CONTACT_FAX><!--传真-->
+  <C_CONTACT_EMAIL>zhaosheng@paic.com.cn</C_CONTACT_EMAIL><!--email-->
+  <C_INSRNT_NME>zs</C_INSRNT_NME><!--被保险人-->
+  <C_ZIP_CDE>123122</C_ZIP_CDE><!--邮政编码-->
+  <C_ADD_INSURANCES><!---附加险-->
+	<C_ADD_INSURANCE>18</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>20</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>23</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>24</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>25</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>27</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>28</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>29</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>30</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>31</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>32</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>33</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>34</C_ADD_INSURANCE>
+	<C_ADD_INSURANCE>09</C_ADD_INSURANCE>
+  </C_ADD_INSURANCES>
+</PolicyApp>
